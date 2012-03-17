@@ -48,7 +48,7 @@ app.configure(function() {
 app.get('/', function(req, res) {
     
     // the url you need to request from hunch
-    url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token=d25dbef5e3805ea9aac48f677dbc97aa8745722e&topic_ids=list_book&reverse"
+    url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token=6275cb220d05d45e411be1358cdcd7a765a1c80b&topic_ids=list_book&reverse"
 
     // make the request to Hunch api
     requestURL(url, function (error, response, hunchJSON) {
