@@ -2,7 +2,7 @@
 
     <div class="span12">
         
-        <h2>Total recommendations: <%= totalRecs %></h2>
+        <h2>Total recommendations: <%= hunchRecs.lenght-1 %></h2>
         <div class="well">
             from hunch api:
             <br><a href="<%= url %>"><%= url %></a>
@@ -10,7 +10,7 @@
         
         <!-- looping through each recommendation -->
         <!-- <% for(i=0; i<hunchRecs.length-1; i++) { %> -->
-        <% for(i=0; i<6; i++) { %>
+        <% for(i=0; i<hunchRecs.length-1; i++) { %>
             <!-- recommendation row -->
             <div class="row">
                 <!-- left column -->
