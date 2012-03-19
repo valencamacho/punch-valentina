@@ -74,8 +74,15 @@ app.get('/', function(req, res) {
 });
 // end of main page
 
+/*
+app.get('/find', function(req,res){
+ url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token=6275cb220d05d45e411be1358cdcd7a765a1c80b&topic_ids="
 
 
+
+}
+
+*/
 // Make server turn on and listen at defined PORT (or port 3000 if is not defined)
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
