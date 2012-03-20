@@ -4,6 +4,12 @@ var ejs = require('ejs'); //embedded javascript template engine
 
 var app = express.createServer(express.logger());
 
+//var http = require('http');
+
+var mongoose = require('mongoose'); // include Mongoose MongoDB library
+var schema = mongoose.Schema; 
+
+
 /*
 var test = require('test');
 test.f();
@@ -21,6 +27,7 @@ require('./models').configureSchema(schema, mongoose);
 var Finding = mongoose.model('Finding');
 
 /************* END DATABASE CONFIGURATION *********/
+
 
 
 
@@ -97,9 +104,11 @@ app.get('/', function(req, res) {
 
 app.post('/', function(req,res){
 
-   console.log("Inside app.post('/')");
+  /*
+ console.log("Inside app.post('/')");
     console.log("form received and includes")
     console.log(request.body);
+*/
     
     // Simple data object to hold the form data
     
@@ -113,7 +122,7 @@ var newLike = {
     
     
      // create a new entry
-    var entry = new Book(newLike);
+    var entry = new Finding(newLike);
     
     // save the new entry
     entry.save();
