@@ -9,6 +9,7 @@ var app = express.createServer(express.logger());
 var mongoose = require('mongoose'); // include Mongoose MongoDB library
 var schema = mongoose.Schema; 
 
+/* var requestURL= require('request'); */
 
 /*
 var test = require('test');
@@ -129,41 +130,68 @@ var newLike = {
     
 
 	response.redirect('/finding/'+ entry._id);
- 
+	 
 });
 
 
 app.get('/finding/:objectid', function(request, response){
- Finding.findById(request.params.objectid,function(err,post){
-        if (err) {
-            console.log('error');
-            console.log(err);
-            response.send("uh oh, can't find that recommendation");
-        }
-        
-          // build the query
-    var query = Finding.find({});
-    query.sort('date',-1); //sort by date in descending order
-    
-    // run the query and display blog_main.html template if successful
-    query.exec({}, function(err, allPosts){
-        
-        // prepare template data
-        templateData = {
-            post : allPosts
-        };     
-          
-          console.log(post); 
+	 Finding.findById(request.params.objectid,function(err,post){
+	        if (err) {
+	            console.log('error');
+	            console.log(err);
+	            response.send("uh oh, can't find that recommendation");
+	        }
+	        
+	          // build the query
+	    var query = Finding.find({});
+	    query.sort('date',-1); //sort by date in descending order
+	    
+	    // run the query and display blog_main.html template if successful
+	    query.exec({}, function(err, allPosts){
+	        
+	        // prepare template data
+	        templateData = {
+	            post : allPosts
+	        };     
+	          
+	          console.log(post); 
+	
+	        
+	        // found the blogpost
+	        response.render('findings.html', templateData);
+	    });
+	});
+});
 
-        
-        // found the blogpost
-        response.render('findings.html', templateData);
+
+// return all blog entries in json format
+app.get('/json/allposts', function(request, response){
+
+    // define the fields you want to include in your json data
+   
+    includeFields = ['item','image','date']
+
+    // query for all blog
+    queryConditions = {}; //empty conditions - return everything
+    var query = Finding.find( queryConditions, includeFields);
+
+    query.sort('date',-1); //sort by most recent
+    query.exec(function (err, finding) {
+
+        // render the card_form template with the data above
+        jsonData = {
+          'status' : 'OK',
+          'posts' : finding
+        }
+
+        response.json(jsonData);
     });
 });
+
+
 
 // Make server turn on and listen at defined PORT (or port 3000 if is not defined)
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
   console.log('Listening on ' + port);
-});
 });
