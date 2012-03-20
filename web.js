@@ -4,8 +4,10 @@ var ejs = require('ejs'); //embedded javascript template engine
 
 var app = express.createServer(express.logger());
 
+/*
 var test = require('test');
 test.f();
+*/
 
 /* var join = require("hunch").getAuthSig(); */
 
