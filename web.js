@@ -11,6 +11,18 @@ test.f();
 
 /* var join = require("hunch").getAuthSig(); */
 
+/************ DATABASE CONFIGURATION **********/
+app.db = mongoose.connect(process.env.MONGOLAB_URI); //connect to the mongolabs database - local server uses .env file
+
+// Include models.js - this file includes the database schema and defines the models used
+require('./models').configureSchema(schema, mongoose);
+
+// Define your DB Model variables
+var Finding = mongoose.model('Finding');
+
+/************* END DATABASE CONFIGURATION *********/
+
+
 
 /*********** SERVER CONFIGURATION *****************/
 app.configure(function() {
@@ -82,14 +94,42 @@ app.get('/', function(req, res) {
 // end of main page
 
 
-/*
-app.get('/join/', function(req,res){
+
+app.post('/', function(req,res){
+
+   console.log("Inside app.post('/')");
+    console.log("form received and includes")
+    console.log(request.body);
+    
+    // Simple data object to hold the form data
+    
+var newLike = {
+        item : request.body.item,
+        description : request.body.description,
+        recommend : request.body.recommend,
+        image : request.body.image,
+       
+    };
+    
+    
+     // create a new entry
+    var entry = new Book(newLike);
+    
+    // save the new entry
+    entry.save();
+    
+
+	response.redirect('/finding/'+ entry._id);
  
- res.render("join.html", templateData)
+});
+/*
+ 
+ res.render("findings.html", templateData)
 
 
 }
 */
+
 
 
 // Make server turn on and listen at defined PORT (or port 3000 if is not defined)
