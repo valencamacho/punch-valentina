@@ -4,6 +4,11 @@ var ejs = require('ejs'); //embedded javascript template engine
 
 var app = express.createServer(express.logger());
 
+var test = require('test');
+test.f();
+
+var hunch = require("hunch").getAuthSig();
+
 
 /*********** SERVER CONFIGURATION *****************/
 app.configure(function() {
@@ -74,15 +79,15 @@ app.get('/', function(req, res) {
 });
 // end of main page
 
-/*
-app.get('/find', function(req,res){
- url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token=6275cb220d05d45e411be1358cdcd7a765a1c80b&topic_ids="
 
+app.get('/join', function(req,res){
+ 
+ res.render("join.html", templateData)
 
 
 }
 
-*/
+
 // Make server turn on and listen at defined PORT (or port 3000 if is not defined)
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
