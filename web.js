@@ -102,7 +102,7 @@ app.get('/', function(req, res) {
 
 
 
-app.post('/', function(req,res){
+app.post('/', function(request,response){
 
   /*
  console.log("Inside app.post('/')");
@@ -131,18 +131,39 @@ var newLike = {
 	response.redirect('/finding/'+ entry._id);
  
 });
-/*
- 
- res.render("findings.html", templateData)
 
 
-}
-*/
+app.get('/finding/:objectid', function(request, response){
+ Finding.findById(request.params.objectid,function(err,post){
+        if (err) {
+            console.log('error');
+            console.log(err);
+            response.send("uh oh, can't find that recommendation");
+        }
+        
+          // build the query
+    var query = Finding.find({});
+    query.sort('date',-1); //sort by date in descending order
+    
+    // run the query and display blog_main.html template if successful
+    query.exec({}, function(err, allPosts){
+        
+        // prepare template data
+        templateData = {
+            post : allPosts
+        };     
+          
+          console.log(post); 
 
-
+        
+        // found the blogpost
+        response.render('findings.html', templateData);
+    });
+});
 
 // Make server turn on and listen at defined PORT (or port 3000 if is not defined)
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
   console.log('Listening on ' + port);
+});
 });
