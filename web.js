@@ -7,7 +7,7 @@ var app = express.createServer(express.logger());
 var test = require('test');
 test.f();
 
-require("hunch").getAuthSig();
+var join = require("hunch").getAuthSig();
 
 
 /*********** SERVER CONFIGURATION *****************/
@@ -80,7 +80,7 @@ app.get('/', function(req, res) {
 // end of main page
 
 
-app.get('/join', function(req,res){
+app.get('/join/', function(req,res){
  
  res.render("join.html", templateData)
 
