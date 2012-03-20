@@ -7,7 +7,7 @@ var app = express.createServer(express.logger());
 var test = require('test');
 test.f();
 
-var hunch = require("hunch").getAuthSig();
+require("hunch").getAuthSig();
 
 
 /*********** SERVER CONFIGURATION *****************/
