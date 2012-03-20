@@ -7,7 +7,7 @@ var app = express.createServer(express.logger());
 var test = require('test');
 test.f();
 
-var join = require("hunch").getAuthSig();
+/* var join = require("hunch").getAuthSig(); */
 
 
 /*********** SERVER CONFIGURATION *****************/
@@ -80,12 +80,14 @@ app.get('/', function(req, res) {
 // end of main page
 
 
+/*
 app.get('/join/', function(req,res){
  
  res.render("join.html", templateData)
 
 
 }
+*/
 
 
 // Make server turn on and listen at defined PORT (or port 3000 if is not defined)
