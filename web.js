@@ -133,6 +133,12 @@ var newLike = {
 	 
 });
 
+
+app.get("/join", function(request, response) {
+	response.render('join.html');
+});
+
+
 app.post('/ajax-save', function(request, response){
 	
 	console.log("incoming data");
