@@ -133,6 +133,35 @@ var newLike = {
 	 
 });
 
+app.post('/ajax-save', function(request, response){
+	
+	console.log("incoming data");
+	console.log(request.body.title);
+	
+	var newLike = {
+		title : request.body.title,
+        item : request.body.item,
+        description : request.body.description,
+        recommend : request.body.recommend,
+        image : request.body.image,
+       
+    };
+    
+    
+     // create a new entry
+    var entry = new Finding(newLike);
+    
+    // save the new entry
+    entry.save();
+    
+    result = {
+    	status : 'saved'
+    };
+    
+    response.json(result)
+    
+});
+
 
 app.get('/finding/:objectid', function(request, response){
 	 Finding.findById(request.params.objectid,function(err,post){

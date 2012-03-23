@@ -3,7 +3,8 @@ module.exports.configureSchema = function(Schema, mongoose) {
     
     // finding 
     var Finding = new Schema({
-      item          : String
+      title         : String
+    ,  item          : String
     , description   : String
     , recommend   : String
     , image       : String
