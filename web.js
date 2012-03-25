@@ -165,11 +165,9 @@ app.post('/ajax-save', function(request, response){
     	status : 'saved'
     };
     
-    /*
-response.json(result)
+    response.json(result)
     
 });
-*/
 
 
 app.get('/finding/:objectid', function(request, response){
