@@ -165,9 +165,11 @@ app.post('/ajax-save', function(request, response){
     	status : 'saved'
     };
     
-    response.json(result)
+    /*
+response.json(result)
     
 });
+*/
 
 
 app.get('/finding/:objectid', function(request, response){
@@ -200,7 +202,7 @@ app.get('/finding/:objectid', function(request, response){
 });
 
 
-// return all blog entries in json format
+// return all blog entries in json format- my API!!!
 app.get('/json/allposts', function(request, response){
 
     // define the fields you want to include in your json data
