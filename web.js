@@ -4,19 +4,18 @@ var ejs = require('ejs'); //embedded javascript template engine
 
 var app = express.createServer(express.logger());
 
-//var http = require('http');
-
 var mongoose = require('mongoose'); // include Mongoose MongoDB library
 var schema = mongoose.Schema; 
 
-/* var requestURL= require('request'); */
+/* HUNCH API AUTH CONFIG */
+var crypto = require('crypto')
+var shasum = crypto.createHash('sha1');
 
-/*
-var test = require('test');
-test.f();
-*/
-
-/* var join = require("hunch").getAuthSig(); */
+hunch = {
+    app_id : '<3147671>',
+    app_secret : '< a1082861f27bce308ba4cf7940b71324ab8b7b05>'
+};
+/* END HUNCH API AUTH CONFIG */
 
 /************ DATABASE CONFIGURATION **********/
 app.db = mongoose.connect(process.env.MONGOLAB_URI); //connect to the mongolabs database - local server uses .env file
@@ -70,7 +69,53 @@ app.configure(function() {
 /*********** END SERVER CONFIGURATION *****************/
 
 
+// main page 
+app.get('/home', function(request, response) {
+    
+    // main page - rather boring right now
+    response.render("join.html")
+    
+});
 
+app.get('/hunchcallback', function (request, response){
+	//get query string from hunch callback
+	auth_token_key = request.query.auth_token_key
+	user_id = request.query.user_id
+	next = request.query.next
+	
+	appDict ={
+		'app_id' : hunch.app_id,
+		'auth_token_key' : auth_token_key	
+	}
+	
+	authSig = getAuthSig(appDict);
+	
+	get_token_request_url = "http://api.hunch.com/api/v1/get-auth-token/?app_id="+hunch.app_id+"&auth_token_key="+auth_token_key+"&auth_sig="+authSig;
+}
+
+
+//Request the auth_token from Hunch
+	requestURL(get_token_request_url, function(error, httpResponse, data){
+		if(!error&&httpResponse.statusCode ==200){
+			hunchData = JSON.parse(data);
+			
+			if(hunchData.status == "accepted"){
+			auth_token = hunchData.auth_token;
+			user_id = hunchData.user_id;
+			
+			response.redirect("/recommendations/"+auth_token);
+		}else {
+			//eror with hunch response
+			response.send("uhoh something went wrong…<br><pre>"+JSON.stringify(hunchData)+"</pre>");	
+			}
+		)else{
+		//not able to get a response from hunch
+		response.send("Error occurred when trying to fetch :"+get_token_request_url)
+		}
+	});
+});
+
+/*
 // main page 
 app.get('/', function(req, res) {
     
@@ -100,10 +145,11 @@ app.get('/', function(req, res) {
 
 });
 // end of main page
+*/
 
 
 
-app.post('/', function(request,response){
+app.post('/home', function(request,response){
 
   /*
  console.log("Inside app.post('/')");
@@ -223,6 +269,67 @@ app.get('/json/allposts', function(request, response){
         response.json(jsonData);
     });
 });
+
+
+
+/***************  GET RECOMMENDATIONS BY AUTH_TOKEN  ****************/
+app.get('/recommendations/:auth_token', function(request, response) {
+    
+    // get the auth token from the url
+    auth_token = request.params.auth_token
+    
+    // the url you need to request from hunch
+    url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token="+auth_token+"&topic_ids=list_book&reverse"
+
+    // make the request to Hunch api
+    requestURL(url, function (error, httpResponse, hunchJSON) {
+        
+        // if successful
+        if (!error && httpResponse.statusCode == 200) {
+
+            // convert hunchJSON into JS object, hunchData
+            hunchData = JSON.parse(hunchJSON);
+
+            // prepare template variables
+            var templateData = {
+                'url' : url,
+                'totalRecs' : hunchData.total,
+                'hunchRecs' : hunchData.recommendations
+            }
+            
+            // render the template with templateData
+            response.render("hunch_display.html",templateData)
+        }
+    });
+
+});
+/***************  END RECOMMENDATIONS BY AUTH_TOKEN  ****************/
+
+/********** Functions for Hunch Authentication ******************/
+function urlencode(x) {
+    return escape(x).replace('+','%2B').replace('/','%2F').replace('@','%40').replace('%20','+');
+}
+
+function getAuthSig(queryDict) {
+    APP_SECRET = hunch.app_secret;
+    
+    var keys = [];
+    for (var key in queryDict)
+        keys.push(key);
+    keys.sort();
+    
+    var queries = [];
+    for (var i in keys)
+        queries.push( urlencode(keys[i]) + '=' + urlencode(queryDict[keys[i]]) );
+    var data = queries.join('&') + APP_SECRET;
+    
+    console.log(data);
+    shasum.update(data);
+    return shasum.digest('hex');
+
+}
+
+
 
 
 
