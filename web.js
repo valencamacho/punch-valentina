@@ -70,12 +70,21 @@ app.configure(function() {
 
 
 // main page 
-app.get('/home', function(request, response) {
+app.get('/', function(request, response) {
     
     // main page - rather boring right now
     response.render("join.html")
     
 });
+
+//end of main page
+
+app.get("/login", function (request, response){
+	response.redirect('hhtp://www.hunch.com/authorize/v1/?app_id='+hunch.app_id);
+	});
+
+
+}
 
 app.get('/hunchcallback', function (request, response){
 	//get query string from hunch callback
@@ -181,9 +190,11 @@ var newLike = {
 });
 
 
+/*
 app.get("/join", function(request, response) {
 	response.render('join.html');
 });
+*/
 
 
 app.post('/ajax-save', function(request, response){
