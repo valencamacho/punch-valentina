@@ -87,6 +87,7 @@ app.get("/login", function (request, response){
 }
 
 app.get('/hunchcallback', function (request, response){
+
 	//get query string from hunch callback
 	auth_token_key = request.query.auth_token_key
 	user_id = request.query.user_id
@@ -106,6 +107,7 @@ app.get('/hunchcallback', function (request, response){
 //Request the auth_token from Hunch
 	requestURL(get_token_request_url, function(error, httpResponse, data){
 		if(!error&&httpResponse.statusCode ==200){
+		
 			hunchData = JSON.parse(data);
 			
 			if(hunchData.status == "accepted"){
