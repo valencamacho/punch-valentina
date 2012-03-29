@@ -80,6 +80,7 @@ app.get('/', function(request, response) {
 //end of main page
 
 app.get("/login", function (request, response){
+
 	response.redirect('hhtp://www.hunch.com/authorize/v1/?app_id='+hunch.app_id);
 	});
 
@@ -121,7 +122,7 @@ app.get('/hunchcallback', function (request, response){
 			}
 		)else{
 		//not able to get a response from hunch
-		response.send("Error occurred when trying to fetch :"+get_token_request_url)
+		response.send("Error occurred when trying to fetch : "+get_token_request_url)
 		}
 	});
 });
