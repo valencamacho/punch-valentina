@@ -5,7 +5,7 @@ var ejs = require('ejs'); //embedded javascript template engine
 var app = express.createServer(express.logger());
 
 var mongoose = require('mongoose'); // include Mongoose MongoDB library
-/* var schema = mongoose.Schema;  */
+var schema = mongoose.Schema; 
 
 /* HUNCH API AUTH CONFIG */
 var crypto = require('crypto')
