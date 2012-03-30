@@ -5,7 +5,7 @@ var ejs = require('ejs'); //embedded javascript template engine
 var app = express.createServer(express.logger());
 
 var mongoose = require('mongoose'); // include Mongoose MongoDB library
-var schema = mongoose.Schema; 
+/* var schema = mongoose.Schema;  */
 
 /* HUNCH API AUTH CONFIG */
 var crypto = require('crypto')
@@ -207,9 +207,9 @@ app.get("/join", function(request, response) {
 
 app.post('/ajax-save', function(request, response){
 	
-	console.log("incoming data");
-	console.log(request.body.title);
-	
+	console.log("incoming data :",request.body);
+	var newLike = request.body;
+/*
 	var newLike = {
 		title : request.body.title,
         item : request.body.item,
@@ -218,19 +218,22 @@ app.post('/ajax-save', function(request, response){
         image : request.body.image,
        
     };
+*/
     
     
      // create a new entry
     var entry = new Finding(newLike);
     
     // save the new entry
-    entry.save();
+    entry.save(function(error){
+    	if (error) throw error;
+    	result = {
+    		status : 'saved'
+    	};
+    	response.json(result);
+    });
     
-    result = {
-    	status : 'saved'
-    };
     
-    response.json(result)
     
 });
 
