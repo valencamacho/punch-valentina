@@ -331,7 +331,9 @@ function urlencode(x) {
 
 function getAuthSig(queryDict) {
     APP_SECRET = hunch.app_secret;
-    
+
+    shasum.update(null)
+
     var keys = [];
     for (var key in queryDict)
         keys.push(key);
