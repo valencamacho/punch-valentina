@@ -85,7 +85,7 @@ app.get("/login", function (request, response){
 	});
 
 
-}
+});
 
 app.get('/hunchcallback', function (request, response){
 
