@@ -333,6 +333,7 @@ function getAuthSig(queryDict) {
     APP_SECRET = hunch.app_secret;
 
     /* shasum.update(null); */
+	var shasum = crypto.createHash('sha1');
 
     var keys = [];
     for (var key in queryDict)
