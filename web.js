@@ -82,10 +82,10 @@ app.get('/', function(request, response) {
 app.get("/login", function (request, response){
 
 	response.redirect('hhtp://www.hunch.com/authorize/v1/?app_id='+hunch.app_id);
-	});
 
 
 });
+
 
 app.get('/hunchcallback', function (request, response){
 
@@ -102,30 +102,35 @@ app.get('/hunchcallback', function (request, response){
 	authSig = getAuthSig(appDict);
 	
 	get_token_request_url = "http://api.hunch.com/api/v1/get-auth-token/?app_id="+hunch.app_id+"&auth_token_key="+auth_token_key+"&auth_sig="+authSig;
-}
 
 
 //Request the auth_token from Hunch
 	requestURL(get_token_request_url, function(error, httpResponse, data){
-		if(!error&&httpResponse.statusCode ==200){
+		
+		if( !error && httpResponse.statusCode ==200){
 		
 			hunchData = JSON.parse(data);
 			
 			if(hunchData.status == "accepted"){
-			auth_token = hunchData.auth_token;
-			user_id = hunchData.user_id;
-			
-			response.redirect("/recommendations/"+auth_token);
-		}else {
-			//eror with hunch response
-			response.send("uhoh something went wrong…<br><pre>"+JSON.stringify(hunchData)+"</pre>");	
+				auth_token = hunchData.auth_token;
+				user_id = hunchData.user_id;
+				
+				response.redirect("/recommendations/"+auth_token);
+			}else {
+				//eror with hunch response
+				response.send("uhoh something went wrong…<br><pre>"+JSON.stringify(hunchData)+"</pre>");	
 			}
-		)else{
+
+
+		} else {
 		//not able to get a response from hunch
 		response.send("Error occurred when trying to fetch : "+get_token_request_url)
 		}
 	});
 });
+
+
+
 
 /*
 // main page 
@@ -171,7 +176,7 @@ app.post('/home', function(request,response){
     
     // Simple data object to hold the form data
     
-var newLike = {
+	var newLike = {
 		title:request.bogy.title,
         item : request.body.item,
         description : request.body.description,
@@ -342,6 +347,8 @@ function getAuthSig(queryDict) {
     return shasum.digest('hex');
 
 }
+
+
 
 
 
