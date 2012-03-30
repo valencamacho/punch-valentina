@@ -17,13 +17,12 @@
                 <div class="span6">
                 	<form method="post">
                     <b>
-                    	<%= JSON.stringify(hunchRecs[i]) %>
                         <a href="<%= hunchRecs[i].url %>"><%= hunchRecs[i].title %></a>
                         <input type="hidden" name="title" value="<%= hunchRecs[i].title %>">
                         <input type="hidden" name="item"  value="<%=hunchRecs[i].url%>">
                         <input type="hidden" name="image" value="<%=hunchRecs[i].image_urls[0] %>">
                         <input type="hidden" name="description" value="<%=hunchRecs[i].description %>">
-                        <input type="hidden" name="recommend" value="<%=hunchRecs[i].image_urls[0] %>">
+                        <input type="hidden" name="recommend" value="<%=hunchRecs[i].recommend %>">
                     </b> - <%= hunchRecs[i].result_id %><br>
                     stars: <%= hunchRecs[i].stars %><br>
                     score:<br>

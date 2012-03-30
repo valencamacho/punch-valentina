@@ -1,3 +1,4 @@
+/*
 jQuery(document).ready(function(){ 
 
 	jQuery('form').submit( function(e) {
@@ -36,3 +37,4 @@ jQuery(document).ready(function(){
 	});
 
 });
+*/

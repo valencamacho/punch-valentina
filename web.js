@@ -177,7 +177,7 @@ app.post('/home', function(request,response){
     // Simple data object to hold the form data
     
 	var newLike = {
-		title:request.bogy.title,
+		title:request.body.title,
         item : request.body.item,
         description : request.body.description,
         recommend : request.body.recommend,
