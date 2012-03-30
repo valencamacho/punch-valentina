@@ -175,15 +175,16 @@ app.post('/home', function(request,response){
 */
     
     // Simple data object to hold the form data
-    
+   	var newLike = request.body;
+
+/*
 	var newLike = {
 		title:request.body.title,
         item : request.body.item,
         description : request.body.description,
         recommend : request.body.recommend,
         image : request.body.image,
-       
-    };
+     }; */
     
     
      // create a new entry
