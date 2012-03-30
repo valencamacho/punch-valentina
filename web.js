@@ -81,7 +81,7 @@ app.get('/', function(request, response) {
 
 app.get("/login", function (request, response){
 
-	response.redirect('hhtp://www.hunch.com/authorize/v1/?app_id='+hunch.app_id);
+	response.redirect('http://www.hunch.com/authorize/v1/?app_id='+hunch.app_id);
 
 
 });
