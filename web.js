@@ -239,6 +239,7 @@ app.post('/ajax-save', function(request, response){
 });
 
 
+/*
 
 app.get('/findings', function(request, response){
 
@@ -277,6 +278,7 @@ app.get('/findings', function(request, response){
             response.render("findings.html",templateData)
         }
     });
+*/
 
 	        
 	        
