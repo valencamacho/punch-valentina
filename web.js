@@ -239,6 +239,73 @@ app.post('/ajax-save', function(request, response){
 });
 
 
+
+app.get('/findings', function(request, response){
+
+	var likes = [];
+	
+	 User.findById(userid,function(err,user){
+	        if (err) {
+	            console.log('error');
+	            console.log(err);
+	            response.send("uh oh, can't find that recommendation");
+	        }
+	        
+	           // get the auth token from the SESSION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	  	  		var auth_token = session.auth_token || "";
+    
+
+    				// the url you need to request from hunch
+	    			var url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token="+auth_token+"&result_ids="user.findings.join(",");
+      
+
+				    // make the request to Hunch api
+    				requestURL(url, function (error, httpResponse, hunchJSON) {
+			        
+			        // if successful
+			        if (!error && httpResponse.statusCode == 200) {
+
+            		// convert hunchJSON into JS object, hunchData
+		            hunchData = JSON.parse(hunchJSON);
+		
+			var templateData = {
+                'url' : url,
+                'totalRecs' : hunchData.total,
+                'hunchRecs' : hunchData.recommendations
+            }
+            // render the template with templateData
+            response.render("findings.html",templateData)
+        }
+    });
+
+	        
+	        
+	        
+	        	
+	        }
+	          // build the query
+	    var query = Finding.find({});
+	    query.sort('date',-1); //sort by date in descending order
+	    
+	    // run the query and display blog_main.html template if successful
+	    query.exec({}, function(err, allPosts){
+	        
+	        // prepare template data
+	        templateData = {
+	            post : allPosts
+	        };     
+	          
+	          console.log(post); 
+	
+	        
+	        // found the blogpost
+	        response.render('findings.html', templateData);
+	    });
+	});
+});
+
+
+
 app.get('/finding/:objectid', function(request, response){
 	 Finding.findById(request.params.objectid,function(err,post){
 	        if (err) {
