@@ -239,8 +239,8 @@ app.post('/ajax-save', function(request, response){
 });
 
 
-/*
 
+/*
 app.get('/findings', function(request, response){
 
 	var likes = [];
@@ -278,34 +278,13 @@ app.get('/findings', function(request, response){
             response.render("findings.html",templateData)
         }
     });
-*/
 
 	        
-	        
-	        
-	        	
-	        }
-	          // build the query
-	    var query = Finding.find({});
-	    query.sort('date',-1); //sort by date in descending order
-	    
-	    // run the query and display blog_main.html template if successful
-	    query.exec({}, function(err, allPosts){
-	        
-	        // prepare template data
-	        templateData = {
-	            post : allPosts
-	        };     
-	          
-	          console.log(post); 
-	
-	        
-	        // found the blogpost
-	        response.render('findings.html', templateData);
-	    });
+	      
 	});
 });
 
+*/
 
 
 app.get('/finding/:objectid', function(request, response){
