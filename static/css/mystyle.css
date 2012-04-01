@@ -1,0 +1,28 @@
+element.style {
+height: 258px;
+}
+
+.site-nav{
+    width: 100%;
+    background-color: #333; }
+
+
+.site-nav ul{
+    margin: 0; padding: 0;
+    float: left;}
+ 
+.site-nav ul li{
+    display: inline;}
+ 
+.site-nav ul li a{
+    float: left; text-decoration: none;
+    color: white;
+    padding: 10.5px 11px;
+    background-color: #333; }
+ 
+.site-nav ul li a:visited{
+    color: white;}
+ 
+.site-nav ul li a:hover, .site-nav ul li .current{
+    color: #fff;
+    background-color:#0b75b2;}
