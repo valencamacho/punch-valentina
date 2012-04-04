@@ -1,22 +1,21 @@
 <div class="row">
 
     <div class="span12">
-    <div class="site-nav">
+    	<div class="site-nav">
 				<ul>
 					<li><a href="/about" title="About Zoom Out Me">About</a></li>
 					<li><a href="/search" title="Search">Search</a></li>
 					<li><a href="'/finding/'+ entry._id" title="My Findings">My Findings</a></li>	
 				</ul>
-			</div>
-			</br>
-			</br>
-        
+		</div>
+	 </div>
+			        
         <h2>Total de recommendations: <%= totalRecs %> <%= hunchRecs.length %> </h2>
         <div class="well">
             from hunch api:
             <br><a href="<%= url %>"><%= url %></a>
+      
         </div>
-        <
         
         <!-- looping through each recommendation -->
        <% for(i=0; i<hunchRecs.length-1; i++) { %> 
