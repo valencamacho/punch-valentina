@@ -349,9 +349,11 @@ app.get('/recommendations/:auth_token', function(request, response) {
     // get the auth token from the url
     auth_token = request.params.auth_token
     
+    var topics = "list_book,cat_art-design,cat_travel,list_website,";
+    
     // the url you need to request from hunch
-    url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token="+auth_token+"&topic_ids=list_book,cat_art-design&reverse"
-
+    url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token="+auth_token+"&topic_ids="+topics+"&reverse"
+    
     // make the request to Hunch api
     requestURL(url, function (error, httpResponse, hunchJSON) {
         
