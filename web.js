@@ -240,8 +240,7 @@ app.post('/ajax-save', function(request, response){
 
 
 
-/*
-app.get('/findings', function(request, response){
+app.get('/myfindings', function(request, response){
 
 	var likes = [];
 	
@@ -284,7 +283,6 @@ app.get('/findings', function(request, response){
 	});
 });
 
-*/
 
 
 app.get('/finding/:objectid', function(request, response){
