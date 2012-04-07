@@ -25,7 +25,8 @@ background-image: -webkit-linear-gradient(top, #08C, #05C);
  }
  
 .btn-primary a:visited{
-    color: white;}
+    color: #eb4a54;
+    background-color: #b21039;}
  
 .btn-primary a:hover{
     color: #fff;
