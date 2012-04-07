@@ -14,6 +14,14 @@ jQuery(document).ready(function(){
 		
 		console.log(ajaxDataToSend);
 		
+		
+		var displayContent = function(content){
+			$(result).btn-primary.addClass('agregado');
+		
+		
+		};
+		
+		
 		jQuery.ajax({
 			url : '/ajax-save',
 			dataType : 'json',
@@ -23,6 +31,8 @@ jQuery(document).ready(function(){
 			success : function(response) {
 				console.log("received from ajax");
 				console.log(response);
+				displayContent(response);
+				
 			},
 			error : function() {
 				alert("uhoh");
