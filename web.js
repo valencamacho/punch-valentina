@@ -194,7 +194,7 @@ app.post('/home', function(request,response){
     entry.save();
     
 
-	response.redirect('/finding/'+ entry._id);
+	response.redirect('/findings/'+ entry._id);
 	 
 });
 
