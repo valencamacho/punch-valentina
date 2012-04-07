@@ -311,7 +311,7 @@ app.get('/finding/:objectid', function(request, response){
 	
 	        
 	        // found the blogpost
-	        response.render('/findings.html', templateData);
+	        response.render("findings.html", templateData);
 	    });
 	});
 });
