@@ -287,6 +287,48 @@ app.get('/finding/'+ entry._id, function(request, response){
 */
 
 
+/*
+////////////my try to do the finding app.get//////////////////////////
+
+
+app.get('/finding/'+entry._id,function(request, response) {
+	
+	var newLike = request.body;
+	var entry = new Finding(newLike);
+	
+    Finding.find({}, function(err, posts){
+        // if there was an error...
+        if (err) {
+            console.log('There was an error');
+            console.log(err);
+            
+            // display message to user
+            response.send("uh oh, there was an error"); 
+        }
+
+        if (post == null ) {
+            console.log('post not found');
+            response.send("uh oh, can't find that post");
+
+        } else {
+            // query was successful
+            console.log("printing all likes");
+            console.log(posts);
+        
+            // save the new entry
+    		templateData
+    		
+    			        
+            // render a template that displays all posts
+            response.render("/findings.html", templateData);
+        }
+    })
+
+});
+
+//////////////////////////end of my try//////////////////////////////////
+*/
+
 
 app.get('/finding/:objectid', function(request, response){
 	 Finding.findById(request.params.objectid,function(err,post){
@@ -305,7 +347,16 @@ app.get('/finding/:objectid', function(request, response){
 	        
 	        // prepare template data
 	        templateData = {
-	            post : allPosts
+	        	title: String
+    ,  item          : String
+    , description   : String
+    , recommend   : String
+    , image       : String
+                'url' : url,
+                'totalRecs' : hunchData.total,
+                'hunchRecs' : hunchData.recommendations
+            }
+
 	        };     
 	          
 	          console.log(post); 
