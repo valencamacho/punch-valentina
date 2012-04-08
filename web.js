@@ -394,8 +394,10 @@ app.get('/json/allposts', function(request, response){
 /***************  GET RECOMMENDATIONS BY AUTH_TOKEN  ****************/
 app.get('/recommendations/:auth_token', function(request, response) {
     
-    // get the auth token from the url
+    // get the auth token and url from the url
     auth_token = request.params.auth_token
+    user_id = request.query.user_id
+    
     
     var topics = "list_book";
     
