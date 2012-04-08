@@ -116,7 +116,10 @@ app.get('/hunchcallback', function (request, response){
 			if(hunchData.status == "accepted"){
 				auth_token = hunchData.auth_token;
 				user_id = hunchData.user_id;
-				res.cookie('user_id', user_id, { expires: new Date(Date.now() + 24*4*900000) });
+				/* res.cookie('user_id', user_id, { expires: new Date(Date.now() + 24*4*900000) }); */
+				res.cookie('user_id', user_id, { expires: new Date(Date.now() + 900000) });
+
+				/* res.cookie('user_id', 'yes', { expires: new Date(Date.now() + 900000), httpOnly: true }); */
 
 				
 				response.redirect("/recommendations/"+auth_token);
