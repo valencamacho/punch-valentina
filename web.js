@@ -113,7 +113,7 @@ app.get('/hunchcallback', function (request, response){
 			
 			if(hunchData.status == "accepted"){
 				auth_token = hunchData.auth_token;
-				/* user_id = hunchData.user_id; */
+				user_id = hunchData.user_id;
 				
 				response.redirect("/recommendations/"+auth_token);
 			}else {
@@ -396,7 +396,7 @@ app.get('/recommendations/:auth_token', function(request, response) {
     
     // get the auth token and url from the url
     auth_token = request.params.auth_token
-    user_id = request.params.query.user_id
+    
     
     
     var topics = "list_book";
