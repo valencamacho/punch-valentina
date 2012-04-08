@@ -347,12 +347,7 @@ app.get('/finding/:objectid', function(request, response){
 	        
 	        // prepare template data
 	        templateData = {
-	        	title: String
-    ,  item          : String
-    , description   : String
-    , recommend   : String
-    , image       : String
-                'url' : url,
+	        	'url' : url,
                 'totalRecs' : hunchData.total,
                 'hunchRecs' : hunchData.recommendations
             }
