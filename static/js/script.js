@@ -16,7 +16,7 @@ jQuery(document).ready(function(){
 		
 		
 		var displayContent = function(content){
-			$(result).btn.btn-primary.addClass('agregado');
+			$(result).btn.btn-primary a:visited.addClass('agregado');
 		
 		
 		};
