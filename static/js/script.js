@@ -15,11 +15,13 @@ jQuery(document).ready(function(){
 		console.log(ajaxDataToSend);
 		
 		
-		var displayContent = function(content){
-			$(result).btn.btn-primary a:visited.addClass('agregado');
+		/*
+var displayContent = function(content){
+			$(result).btn.btn-primary.addClass('agregado');
 		
 		
 		};
+*/
 		
 		
 		jQuery.ajax({
@@ -31,7 +33,7 @@ jQuery(document).ready(function(){
 			success : function(response) {
 				console.log("received from ajax");
 				console.log(response);
-				displayContent(response);
+				/* displayContent(response); */
 				
 			},
 			error : function() {
