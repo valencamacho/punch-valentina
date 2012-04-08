@@ -413,6 +413,7 @@ app.get('/recommendations/:auth_token', function(request, response) {
 
             // prepare template variables
             var templateData = {
+            	'user_id' : user_id,
                 'url' : url,
                 'totalRecs' : hunchData.total,
                 'hunchRecs' : hunchData.recommendations
