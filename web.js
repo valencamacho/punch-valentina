@@ -241,7 +241,7 @@ app.post('/ajax-save', function(request, response){
 
 
 
-app.get('/findings'+ entry._id, function(request, response){
+app.get('/finding/'+ entry._id, function(request, response){
 
 	var likes = [];
 	
@@ -316,6 +316,7 @@ app.get('/finding/:objectid', function(request, response){
 });
 
 
+/*
 // return all blog entries in json format- my API!!!
 app.get('/json/allposts', function(request, response){
 
@@ -339,6 +340,7 @@ app.get('/json/allposts', function(request, response){
         response.json(jsonData);
     });
 });
+*/
 
 
 
