@@ -27,7 +27,7 @@ background-image: -webkit-linear-gradient(top, #08C, #05C);
 .btn-primary a:visited{
     color: #eb4a54;
     /* background-color: #b21039; */
-    background-image: url(-webkit-linear-gradient(buttom,#08C,#05C);
+    background-image:-webkit-linear-gradient(bottom,#08C,#05C);
     }
  
 .btn-primary a:hover{
