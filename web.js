@@ -350,9 +350,8 @@ app.get('/finding/:objectid', function(request, response){
 	        	'url' : url,
                 'totalRecs' : hunchData.total,
                 'hunchRecs' : hunchData.recommendations
-            }
 
-	        };     
+	        }     
 	          
 	          console.log(post); 
 	
