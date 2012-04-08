@@ -241,6 +241,7 @@ app.post('/ajax-save', function(request, response){
 
 
 
+/*
 app.get('/finding/'+ entry._id, function(request, response){
 
 	var likes = [];
@@ -256,8 +257,10 @@ app.get('/finding/'+ entry._id, function(request, response){
 	  	  		var auth_token = session.auth_token || "";
     
 
-    				// the url you need to request from hunch
+    			/*
+	// the url you need to request from hunch
 	    			var url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token="+auth_token+"&result_ids="user.findings.join(",");
+*/
       
 
 				    // make the request to Hunch api
@@ -283,6 +286,7 @@ app.get('/finding/'+ entry._id, function(request, response){
 	      
 	});
 });
+*/
 
 
 
