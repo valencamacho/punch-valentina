@@ -34,7 +34,6 @@ var Finding = mongoose.model('Finding');
 /*********** SERVER CONFIGURATION *****************/
 app.configure(function() {
     
-    
     /*********************************************************************************
         Configure the template engine
         We will use EJS (Embedded JavaScript) https://github.com/visionmedia/ejs
@@ -58,6 +57,9 @@ app.configure(function() {
     ******************************************************************/
     app.use(express.static(__dirname + '/static'));
     
+	// USE COOKIES
+    app.use(express.cookieParser());
+
     //parse any http form post
     app.use(express.bodyParser());
     
