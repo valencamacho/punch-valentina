@@ -113,7 +113,7 @@ app.get('/hunchcallback', function (request, response){
 			
 			if(hunchData.status == "accepted"){
 				auth_token = hunchData.auth_token;
-				user_id = hunchData.user_id;
+				/* user_id = hunchData.user_id; */
 				
 				response.redirect("/recommendations/"+auth_token);
 			}else {
