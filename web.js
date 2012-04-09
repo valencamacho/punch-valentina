@@ -250,7 +250,7 @@ app.get('/finding/'+ entry._id, function(request, response){
 
 	var likes = [];
 	
-	Finding.find({ 'user_id': request.cookies.user_id} }, function (err, findings) {
+	Finding.find({ 'user_id': request.cookies.user_id}, function (err, findings) {
   // docs is an array
 	        if (err) {
 	            console.log('error');
