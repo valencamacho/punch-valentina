@@ -257,7 +257,7 @@ app.get('/findings', function(request, response){
 	            console.log(err);
 	            response.send("uh oh, can't find that recommendation");
 	        }
-	        response.render ('findings_test.html', findings);
+	        response.render ('findings_test.html', {'findings' : findings});
 	           
         });
 
