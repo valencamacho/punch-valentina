@@ -396,7 +396,7 @@ app.get('/json/allposts', function(request, response){
 
 
 /***************  GET RECOMMENDATIONS BY AUTH_TOKEN  ****************/
-app.get('/recommendations/:auth_token', function(request, response) {
+app.get('/recommendations/:auth_token', function(	, response) {
     
     // get the auth token from the url
     auth_token = request.params.auth_token
@@ -419,7 +419,7 @@ app.get('/recommendations/:auth_token', function(request, response) {
 
             // prepare template variables
             var templateData = {
-            	'hunchData' : hunchData,
+            	
             	'user_id' : request.cookies.user_id,
                 'url' : url,
                 'totalRecs' : hunchData.total,
