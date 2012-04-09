@@ -257,7 +257,7 @@ app.get('/findings', function(request, response){
 	            return response.send("uh oh, can't find that recommendation");
 	        }
 			var templateData = {'findings' : findings};
-	        response.render("findingstest.html",templateData);
+	        response.render("findings.html",templateData);
    
         });
 

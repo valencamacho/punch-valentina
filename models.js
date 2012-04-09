@@ -18,4 +18,3 @@ module.exports.configureSchema = function(Schema, mongoose) {
     mongoose.model('Finding', Finding);
 
 };
-
