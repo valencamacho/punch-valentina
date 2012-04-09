@@ -117,9 +117,10 @@ app.get('/hunchcallback', function (request, response){
 				auth_token = hunchData.auth_token;
 				user_id = hunchData.user_id;
 				response.cookie('user_id', user_id, { expires: new Date(Date.now() + (24*4*900000) ), httpOnly: true });
+				response.cookie('auth_token', auth_token, { expires: new Date(Date.now() + (24*4*900000) ), httpOnly: true });
 
 				
-				response.redirect("/recommendations/"+auth_token);
+				response.redirect("/recommendations/");
 			}else {
 				//eror with hunch response
 				response.send("uhoh something went wrong…<br><pre>"+JSON.stringify(hunchData)+"</pre>");	
@@ -245,50 +246,22 @@ app.post('/ajax-save', function(request, response){
 
 
 
-/*
 app.get('/finding/'+ entry._id, function(request, response){
 
 	var likes = [];
 	
-	 User.findById(userid,function(err,user){
+	Finding.find({ 'user_id': request.cookies.user_id} }, function (err, findings) {
+  // docs is an array
 	        if (err) {
 	            console.log('error');
 	            console.log(err);
 	            response.send("uh oh, can't find that recommendation");
 	        }
-	        
-	           // get the auth token from the SESSION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	  	  		var auth_token = session.auth_token || "";
-    
-
-    				// the url you need to request from hunch
-	    			var url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token="+auth_token+"&result_ids="user.findings.join(",");
-      
-
-				    // make the request to Hunch api
-    				requestURL(url, function (error, httpResponse, hunchJSON) {
-			        
-			        // if successful
-			        if (!error && httpResponse.statusCode == 200) {
-
-            		// convert hunchJSON into JS object, hunchData
-		            hunchData = JSON.parse(hunchJSON);
-		
-			var templateData = {
-                'url' : url,
-                'totalRecs' : hunchData.total,
-                'hunchRecs' : hunchData.recommendations
-            }
-            // render the template with templateData
-            response.render("findings.html",templateData)
+	        response.render ('findings_test.html', findings);
+	           
         }
-    });
 
-	        
-	      
-	});
 });
-*/
 
 
 /*
@@ -396,10 +369,10 @@ app.get('/json/allposts', function(request, response){
 
 
 /***************  GET RECOMMENDATIONS BY AUTH_TOKEN  ****************/
-app.get('/recommendations/:auth_token', function(request , response) {
+app.get('/recommendations/', function(request , response) {
     
     // get the auth token from the url
-    auth_token = request.params.auth_token
+    auth_token = request.cookies.auth_token
     /* user_id = request.params.query.user_id */
     
     
