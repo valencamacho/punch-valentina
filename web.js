@@ -259,7 +259,7 @@ app.get('/finding/'+ entry._id, function(request, response){
 	        }
 	        response.render ('findings_test.html', findings);
 	           
-        }
+        });
 
 });
 
