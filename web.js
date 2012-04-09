@@ -248,17 +248,17 @@ app.post('/ajax-save', function(request, response){
 
 app.get('/findings', function(request, response){
 
-	var likes = [];
 	
 	Finding.find({ 'user_id': request.cookies.user_id}, function (err, findings) {
   // docs is an array
 	        if (err) {
 	            console.log('error');
 	            console.log(err);
-	            response.send("uh oh, can't find that recommendation");
+	            return response.send("uh oh, can't find that recommendation");
 	        }
-	        response.render ('findings_test.html', {'findings' : findings});
-	           
+			var templateData = {'findings' : findings};
+	        response.render("findingstest.html",templateData);
+   
         });
 
 });
