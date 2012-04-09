@@ -1,3 +1,51 @@
 
 <%= JSON.stringify(findings) %>
 
+<div class="row">
+
+    <div class="span12">
+    	<div class="site-nav">
+				<ul>
+					<li><a href="/about" title="About Zoom Out Me">About</a></li>
+					<li><a href="/" title="Search">Search</a></li>
+					<li><a href="/findings/" title="My Findings">My Findings</a></li>	
+				</ul>
+		</div>
+	 </div>
+			        
+        <h2>Total de findings:  <%= findings.length %> </h2>
+        <div class="well">
+      
+        </div>
+        user: <%= user_id%>
+        
+        <!-- looping through each recommendation -->
+       <% for(var i=0; i < findings.length; i++) { %> 
+            <!-- recommendation row -->
+           
+            <div class="row">
+                <!-- left column -->
+                <div class="span6">
+                	<form method="post" action="/home">
+                    <b>
+                        <a href="<%= findings[i].url %>"><%= findings[i].item %></a>
+
+                    </b> - <%= findings[i].item_id %><br>
+                    <!-- loop through all score array items -->
+
+                </div><!-- end of left column -->
+                
+                <!-- Right column -->
+                <div class="span3">
+                    <img src="<%= hunchRecs[i].image %>">
+                    
+                </div><!-- end of right column -->
+                <div class="subnav">
+                </div>
+
+
+            </div><!-- end of recommendation row -->
+        <% } %>
+
+    </div>
+</div>
