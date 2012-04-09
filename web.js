@@ -246,7 +246,7 @@ app.post('/ajax-save', function(request, response){
 
 
 
-app.get('/finding/'+ entry._id, function(request, response){
+app.get('/finding/', function(request, response){
 
 	var likes = [];
 	
