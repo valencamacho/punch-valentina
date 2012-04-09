@@ -396,7 +396,7 @@ app.get('/json/allposts', function(request, response){
 
 
 /***************  GET RECOMMENDATIONS BY AUTH_TOKEN  ****************/
-app.get('/recommendations/:auth_token', function(	, response) {
+app.get('/recommendations/:auth_token', function(request , response) {
     
     // get the auth token from the url
     auth_token = request.params.auth_token
