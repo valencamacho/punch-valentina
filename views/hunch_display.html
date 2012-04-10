@@ -23,12 +23,7 @@
         <!-- looping through each recommendation -->
        <% for(i=0; i<hunchRecs.length-1; i++) { %> 
             <!-- recommendation row -->
-           
-            <div class="row">
-                <!-- left column -->
-                <div class="span6">
-                
-                <div id="content">
+             <div id="content">
 			<div>
 				<canvas id="spiral2462012" data-processing-sources="/js/spiral2_4_6_2012.pde" 
 						width="400" height="400">
@@ -43,6 +38,11 @@
 			
 	    			</div>
 		<div id="spiralNumberContainer"></div>
+            <div class="row">
+                <!-- left column -->
+                <div class="span6">
+                
+              
                 	<form method="post" action="/home">
                     <b>
                         <a href="<%= hunchRecs[i].url %>"><%= hunchRecs[i].title %></a>
