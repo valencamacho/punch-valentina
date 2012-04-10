@@ -17,13 +17,9 @@
             <br><a href="<%= url %>"><%= url %></a>
       
         </div>
--->
-        user: <%= user_id%>
         
-        <!-- looping through each recommendation -->
-       <% for(i=0; i<hunchRecs.length-1; i++) { %> 
-            <!-- recommendation row -->
-             <div id="content">
+-->
+<div id="content">
 			<div>
 				<canvas id="spiral2462012" data-processing-sources="/js/spiral2_4_6_2012.pde" 
 						width="400" height="400">
@@ -38,6 +34,13 @@
 			
 	    			</div>
 		<div id="spiralNumberContainer"></div>
+		
+        user: <%= user_id%>
+        
+        <!-- looping through each recommendation -->
+       <% for(i=0; i<hunchRecs.length-1; i++) { %> 
+            <!-- recommendation row -->
+             
             <div class="row">
                 <!-- left column -->
                 <div class="span6">
