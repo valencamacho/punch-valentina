@@ -136,41 +136,6 @@ app.get('/hunchcallback', function (request, response){
 
 
 
-
-/*
-// main page 
-app.get('/', function(req, res) {
-    
-    // the url you need to request from hunch
-    url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token=6275cb220d05d45e411be1358cdcd7a765a1c80b&topic_ids=list_book&reverse"
-
-    // make the request to Hunch api
-    requestURL(url, function (error, response, hunchJSON) {
-        
-        // if successful
-        if (!error && response.statusCode == 200) {
-
-            // convert hunchJSON into JS object, hunchData
-            hunchData = JSON.parse(hunchJSON);
-
-            // prepare template variables
-            var templateData = {
-                'url' : url,
-                'totalRecs' : hunchData.total,
-                'hunchRecs' : hunchData.recommendations
-            }
-            
-            // render the template with templateData
-            res.render("hunch_display.html",templateData)
-        }
-    });
-
-});
-// end of main page
-*/
-
-
-
 app.post('/home', function(request,response){
 
   /*
@@ -199,7 +164,7 @@ app.post('/home', function(request,response){
     entry.save();
     
 
-	response.redirect('/finding/'+ entry._id);
+	response.redirect('/'+ entry._id);
 	
 	 
 });
@@ -264,47 +229,6 @@ app.get('/findings', function(request, response){
 });
 
 
-/*
-////////////my try to do the finding app.get//////////////////////////
-
-
-app.get('/finding/'+entry._id,function(request, response) {
-	
-	var newLike = request.body;
-	var entry = new Finding(newLike);
-	
-    Finding.find({}, function(err, posts){
-        // if there was an error...
-        if (err) {
-            console.log('There was an error');
-            console.log(err);
-            
-            // display message to user
-            response.send("uh oh, there was an error"); 
-        }
-
-        if (post == null ) {
-            console.log('post not found');
-            response.send("uh oh, can't find that post");
-
-        } else {
-            // query was successful
-            console.log("printing all likes");
-            console.log(posts);
-        
-            // save the new entry
-    		templateData
-    		
-    			        
-            // render a template that displays all posts
-            response.render("/findings.html", templateData);
-        }
-    })
-
-});
-
-//////////////////////////end of my try//////////////////////////////////
-*/
 
 
 app.get('/finding/:objectid', function(request, response){
