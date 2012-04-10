@@ -317,8 +317,8 @@ app.get('/recommendations/', function(request , response) {
             // prepare template variables
             var templateData = {
             	
-            	'user_id' : request.cookies.user_id,
-                'url' : url,
+            	'user_id'	: request.cookies.user_id,
+                'url' 		: url,
                 'totalRecs' : hunchData.total,
                 'hunchRecs' : hunchData.recommendations
             }
