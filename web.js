@@ -264,7 +264,6 @@ app.get('/finding/:objectid', function(request, response){
 });
 
 
-/*
 // return all blog entries in json format- my API!!!
 app.get('/json/allposts', function(request, response){
 
@@ -288,7 +287,6 @@ app.get('/json/allposts', function(request, response){
         response.json(jsonData);
     });
 });
-*/
 
 
 
