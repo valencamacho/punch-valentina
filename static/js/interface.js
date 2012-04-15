@@ -28,3 +28,10 @@ var getSpiralValue = function() {
 	spiralNumDiv.innerHTML = Processing.instances[0].getHunchRange();
 	console.log( Processing.instances[0].getHunchRange() ); 
 }
+ 
+ 
+/*
+var hunchRecs.length = function (){
+	spiralHunch= document.get
+	}
+*/
