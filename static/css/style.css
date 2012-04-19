@@ -169,27 +169,27 @@ a:active {
 	left: 2185px;
 	top: 660px;
 	width: 460px;
-	transform: rotate(-90deg) translateY(2.5em);
+	-webkit-transform: rotate(-90deg) translateY(2.5em);
 }
 
 .rotations .upside-down {
 	font-size: 42px;
 	text-align: right;
-	transform: rotate(180deg) translateY(3em);
+	-webkit-transform: rotate(180deg) translateY(3em);
 }
 
 .source {
 	left: 2200px;
 	top: -800px;
 	width: 400px;
-	transform: rotate(90deg) translateX(50px);
+	-webkit-transform: rotate(90deg) translateX(50px);
 }
 
 .follow {
 	width: 475px;
 	left: 1100px;
 	top: -950px;
-	transform: rotate(90deg) translateX(50px);
+	-webkit-transform: rotate(90deg) translateX(50px);
 }
 
 .follow .big {
