@@ -59,7 +59,7 @@
 				initCanvas();
 				initScrollBar();
 				scrollToStep( 0 ); // Go to the first step immediately
-				element.css( "position", "relative" );
+				element.css( "position", "absolute" );
 
 				$( document ).on({
 					"mousewheel": scrollHandler,
