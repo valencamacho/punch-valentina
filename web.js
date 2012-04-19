@@ -75,7 +75,8 @@ app.configure(function() {
 app.get('/', function(request, response) {
     
     // main page - rather boring right now
-    response.render("join.html")
+    /* response.render("join.html") */
+    response.render("index.ejs")
     
 });
 
