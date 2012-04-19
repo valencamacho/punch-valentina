@@ -145,6 +145,14 @@ a:active {
 .demo .arrow {
 	font-size: 20px;
 	-webkit-animation: point-down 0.5s alternate infinite;
+	-webkit-animation-name: point-down;
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-timing-function: initial;
+	-webkit-animation-delay: initial;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-fill-mode: initial;
+}
 }
 
 .description {
