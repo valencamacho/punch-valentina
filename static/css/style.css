@@ -144,7 +144,7 @@ a:active {
 
 .demo .arrow {
 	font-size: 20px;
-	animation: point-down 0.5s alternate infinite;
+	-webkit-animation: point-down 0.5s alternate infinite;
 }
 
 .description {
@@ -197,7 +197,7 @@ a:active {
 }
 
 .highlight {
-	animation: highlight 1s alternate 2;
+	-webkit-animation: highlight 1s alternate 2;
 }
 
 @keyframes point-down {
