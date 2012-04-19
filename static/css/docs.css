@@ -354,7 +354,7 @@ hr.soften {
   display: block;
 }
 .popover-well .popover-wrapper {
-  width: 50%;
+  width: 0%;
   height: 160px;
   float: left;
   margin-left: 55px;

@@ -103,8 +103,7 @@
 	/* The Path object serves as a context to "draw" the scroll path
 		on before initating the plugin */
 	function Path( scrollS, rotateS ) {
-		/* var PADDING = 40, */
-		var PADDING = 0,
+		var PADDING = 40,
 			scrollSpeed = scrollS,
 			rotationSpeed = rotateS,
 			xPos = 0,
