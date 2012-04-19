@@ -76,7 +76,7 @@ app.get('/', function(request, response) {
     
     // main page - rather boring right now
     /* response.render("join.html") */
-    response.render("index.ejs")
+    response.render("index.html")
     
 });
 
