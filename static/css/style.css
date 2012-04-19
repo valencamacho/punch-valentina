@@ -35,9 +35,11 @@ body {
 	color: white;
 	font-size: 20px;
 	font-family: "Terminal Dosis", sans-serif;
-	text-shadow: 
+	/*
+text-shadow: 
 		1px 1px 0 transparent,
 		2px 2px 0 #101010;
+*/
 	overflow: hidden;
 }
 h1 {
