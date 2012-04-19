@@ -76,7 +76,7 @@ a:active {
 }
 
 .wrapper div {
-	position: absolute;
+	position: relative;
 }
 
 .settings, .navigation {
