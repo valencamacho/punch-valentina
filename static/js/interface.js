@@ -9,6 +9,7 @@ window.onload = function () {
 }
 
 var zoomOutSketch;
+var adjustedHunchRecNum;
 
 function tryFindSketch () {
 //    var zoomOutSketch = Processing.instances[0];
@@ -25,8 +26,11 @@ function tryFindSketch () {
 
 var getSpiralValue = function() {
 	spiralNumDiv = document.getElementById('spiralNumberContainer');
-	spiralNumDiv.innerHTML = Processing.instances[0].getHunchRange();
-	console.log( Processing.instances[0].getHunchRange() ); 
+	
+	adjustedHunchRecNum = Processing.instances[0].mapTheNumbers(1.5,1.8);
+	
+	spiralNumDiv.innerHTML = Processing.instances[0].getHunchRange() + "   adjusted: " + adjustedHunchRecNum;
+	//console.log( Processing.instances[0].getHunchRange() ); 
 }
  
  
