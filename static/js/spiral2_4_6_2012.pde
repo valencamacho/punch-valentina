@@ -121,8 +121,16 @@ void draw() {
 
 
 // Browser/Client side javascript will call this function
+// mouse position inside spiral
 int getHunchRange() {
    return currentI;
+}
+
+int mapTheNumbers(float lowNum, float highNum) {
+
+	hunchAdjustedNumber = map(getHunchRange(), 0, hunchResults,lowNum, highNum );
+	return hunchAdjustedNumber;
+
 }
 
 class Pointer {
