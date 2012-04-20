@@ -5,11 +5,17 @@ window.onload = function () {
     tryFindSketch();
     
     setInterval(getSpiralValue, 100);
+    setInterval(findClosestRec, 1000); //1 second delay on filtering recommendation rows
     
 }
 
 var zoomOutSketch;
 var adjustedHunchRecNum;
+
+var currentClosestRec = null;
+var currentClosestDifference = 0;
+
+
 
 function tryFindSketch () {
 //    var zoomOutSketch = Processing.instances[0];
@@ -39,3 +45,38 @@ var hunchRecs.length = function (){
 	spiralHunch= document.get
 	}
 */
+
+var findClosestRec = function() {
+	currentClosestRec = null;
+	currentClosestDifference = 0;
+
+	jQuery("div.recommendation").each( function(i, currentRec) { 
+	
+		var recommendationDiff = Math.abs( jQuery(currentRec).data('hunchstars') - adjustedHunchRecNum );
+	
+		if (currentClosestRec == null) {
+			currentClosestRec = currentRec;
+			currentClosestDifference = recommendationDiff;
+			
+		} else {
+			
+			//is this the winner?
+			if (recommendationDiff < currentClosestDifference) {
+				currentClosestRec = currentRec;
+				currentClosestDifference = recommendationDiff;
+				
+			}
+		
+		}
+			
+		//console.log( 'adjusted hunch # = ' + adjustedHunchRecNum + '   current winner is: ' + jQuery(currentClosestRec).data('hunchstars') );
+	
+	} );
+	
+	//show and hide of recommendations
+	jQuery('div.recommendation').hide(); //hide all
+	
+	jQuery(currentClosestRec).show();
+	jQuery(currentClosestRec).prev().show();
+	jQuery(currentClosestRec).next().show();
+}
