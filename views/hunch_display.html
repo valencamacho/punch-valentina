@@ -10,8 +10,10 @@
 				</ul>
 			</div>
 		 </div><!--closing header-->
+		 
+		 <div id="leftcolumn">
 		 					   
-		<h2>Total de recommendations: <%= totalRecs %> <%= hunchRecs.length %> </h2>
+			<h2>Total de recommendations: <%= totalRecs %> <%= hunchRecs.length %> </h2>
 	   <!--
  <div class="well">
 			from hunch api:
@@ -20,34 +22,40 @@
 		</div>
 		
 -->
-<div id="content">
-			<div>
-				<canvas id="spiral2462012" data-processing-sources="/js/spiral2_4_6_2012.pde" 
+			<div id="content">
+				<div>
+					<canvas id="spiral2462012" data-processing-sources="/js/spiral2_4_6_2012.pde" 
 						width="400" height="400">
-					<p>Your browser does not support the canvas tag.</p>
+						<p>Your browser does not support the canvas tag.</p>
 					<!-- Note: you can put any alternative content here. -->
-				</canvas>
-				<noscript>
+					</canvas>
+					<noscript>
 					<p>JavaScript is required to view the contents of this page.</p>
-				</noscript>
+					</noscript>
 		 		</div>
-		 	</div>
-		<div id="spiralNumberContainer"></div>
+		 	</div><!--closing content-->
+		 	
+			<div id="spiralNumberContainer"></div>
 		
-		user: <%= user_id%>
+			user: <%= user_id%>
 		
-		<!-- looping through each recommendation -->
-	   <% for(i=0; i<hunchRecs.length-1; i++) { %> 
+		</div> <!--closing leftcolumn"-->
+		
+		
+		
+		<div id="rightcolumn">
+		
+			<!-- looping through each recommendation -->
+	   		<% for(i=0; i<hunchRecs.length-1; i++) { %> 
 			<!-- recommendation row -->
 			 
 			<div class="recommendation row" data-hunchStars="<%= hunchRecs[i].stars %>">
 				<!-- left column -->
 				<div class="span6">
-				
 			  
 					<form method="post" action="/home">
 					<b>
-						<a href="<%= hunchRecs[i].url %>"><%= hunchRecs[i].title %></a>
+						<!-- <a href="<%= hunchRecs[i].url %>"><%= hunchRecs[i].title %></a> -->
 						<input type="hidden" name="user_id" value="<%= user_id%>">
 						<input type="hidden" name="item_id" value="<%= hunchRecs[i].result_id%>">
 						<input type="hidden" name="title" value="<%= hunchRecs[i].title %>">
@@ -60,10 +68,12 @@
 				   <!--
  score:<br>
 					<!-- loop through all score array items -->
-					<% for (s=0;s<hunchRecs[i].score.length; s++) { %>
+					<!--
+<% for (s=0;s<hunchRecs[i].score.length; s++) { %>
 					
 					<span class="score"><%= hunchRecs[i].score[s] %></span><br>
 					<% } %>
+-->
 -->
 				</div>
 				<!-- end of left column -->
@@ -83,12 +93,12 @@
 			</div><!-- end of recommendation row -->
 		<% } %>
 
-	</div>
+		</div><!--closing righ column__>
 <!-- </div> -->
 <div id="footer">
 This is the footer
-
 </div>
+
 </div><!--closing wrapper-->
 		
 		
