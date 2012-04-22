@@ -34,7 +34,7 @@ body {
  background: #F2F2E6;
  margin: 0px;
  height: 600px;
- width: 60%;
+ width: 50%;
  float: left;
 }
 #rightcolumn { 
@@ -43,7 +43,7 @@ body {
  /* border: 1px solid #ccc; */
  background: #E7DBD5;
  height: 600px;
- width: 40%;
+ width: 50%;
 
 }
 #footer { 
