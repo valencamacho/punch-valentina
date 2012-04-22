@@ -1,28 +1,20 @@
 <!-- <div class="todo"> -->
-	<div class="row">
-
-		<div class="span12">
-		<div class="navbarme">
+	<div id="wrapper">
+		<div id="header">
 			<div class="site-nav">
 				<ul>
 					<li><a href="/about" title="About Zoom Out Me">About</a></li>
 					<li><a href="/" title="Search">Search</a></li>
 					<li><a href="/findings/" title="My Findings">My Findings</a></li>	
 				</ul>
-			</div>
-	 </div>
-	 	</div>
+			</div><!--close site-nav-->
+	 	</div><!--close header-->
+         
+        <div id="leftcolumn"></div>
 					   
 		<h2>Total de recommendations: <%= totalRecs %> <%= hunchRecs.length %> </h2>
-	   <!--
- <div class="well">
-			from hunch api:
-			<br><a href="<%= url %>"><%= url %></a>
-	  
-		</div>
-		
--->
-<div id="content">
+	   
+	   <div id="content">
 			<div>
 				<canvas id="spiral2462012" data-processing-sources="/js/spiral2_4_6_2012.pde" 
 						width="400" height="400">
@@ -36,6 +28,10 @@
 		 	</div>
 		<div id="spiralNumberContainer"></div>
 		
+		</div> <!--closing leftcolumn-->
+		
+		<div id="rightcolumn">
+		
 		user: <%= user_id%>
 		
 		<!-- looping through each recommendation -->
@@ -44,10 +40,8 @@
 			 
 			<div class="recommendation row" data-hunchStars="<%= hunchRecs[i].stars %>">
 				<!-- left column -->
-				<div class="span6">
-				
-			  
-					<form method="post" action="/home">
+				<!-- <div class="span6"> -->
+				<form method="post" action="/home">
 					<b>
 						<a href="<%= hunchRecs[i].url %>"><%= hunchRecs[i].title %></a>
 						<input type="hidden" name="user_id" value="<%= user_id%>">
@@ -59,21 +53,22 @@
 						<input type="hidden" name="recommend" value="<%=hunchRecs[i].recommend %>">
 					</b> - <%= hunchRecs[i].result_id %><br>
 					stars: <%= hunchRecs[i].stars %><br>
-				   <!--
- score:<br>
+				   <!--score:<br>
 					<!-- loop through all score array items -->
-					<% for (s=0;s<hunchRecs[i].score.length; s++) { %>
+					<!--
+<% for (s=0;s<hunchRecs[i].score.length; s++) { %>
 					
 					<span class="score"><%= hunchRecs[i].score[s] %></span><br>
 					<% } %>
+-->
 -->
 				</div>
 				<!-- end of left column -->
 				
 				<!-- Right column -->
-				<div class="span3">
-					<a href="<%= hunchRecs[i].url %>"><%= hunchRecs[i].title %></a>
-					<img src="<%= hunchRecs[i].image_urls[0] %>">
+				<a href="<%= hunchRecs[i].url %>"><%= hunchRecs[i].title %></a>
+				<img src="<%= hunchRecs[i].image_urls[0] %>">
+				<input name="description" value="<%=hunchRecs[i].description %>">
 					
 				</div><!-- end of right column -->
 				<div class="subnav">
