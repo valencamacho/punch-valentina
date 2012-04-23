@@ -2,7 +2,7 @@
  
  * Valentina Camacho
  * Thesis - Zoom Out.me
- * Feb 28 2012
+ * April 2012
  
  * Based on:
  * PolarToCartesian
@@ -28,13 +28,13 @@ int closestI = 0;
 int hunchResults;
 
 void setup() {
-  size(400, 400);
+  size(600, 600);
 
   smooth();
 
 
   // Initialize all values
-  r = 180;
+  r = 280;
   theta = 0;
   a = 0;
 
@@ -43,7 +43,7 @@ void setup() {
   spiralImage = createImage(width, height, RGB);
   
   // pull from website's xml what that number is
-  hunchResults = 4000;//instead of 4000 it should be the call from the API
+  hunchResults = 1800;//instead of 4000 it should be the call from the API
   
   // whenever the user clicks on the spiral
   //changePage();
@@ -59,7 +59,7 @@ void draw() {
     background(238,232,224);
 
     float factor = 2;
-    float dtheta = 0.015*factor;
+    float dtheta = 0.017*factor;
 
     for (int i = 0; i < hunchResults; i++) {
       // Convert polar to cartesian
@@ -67,14 +67,15 @@ void draw() {
       float y = rr * sin(theta);
       spiral.add(new Pointer(x, y));
       theta += dtheta;
-      rr=constrain(r, 1, 1000);
+      rr=constrain(r, 1, 2120);
 
       float rdiv = 1000/factor;
       r=r-r/rdiv;
     }
 
     // Translate the origin point to the center of the screen
-    translate(width/2, height/2);
+    
+    translate(width/2-20, height/2);
     for (Pointer p : spiral) {
       p.display();
     }
@@ -92,10 +93,10 @@ void draw() {
   else {
 
     image(spiralImage, 0, 0);
-    translate(width/2, height/2);
+    translate(width/2-20, height/2);
     int i = 0;
     for (Pointer p : spiral) {
-      float d = dist(p.loc.x+width/2, p.loc.y+height/2, mouseX, mouseY);
+      float d = dist(p.loc.x+width/2,p.loc.y+height/2, mouseX, mouseY);
       if (d < 10) {
         fill(255, 0, 0);
         closestI = i;
