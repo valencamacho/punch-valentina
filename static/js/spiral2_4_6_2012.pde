@@ -14,7 +14,9 @@ float r, rr;
 float theta;
 float a;
 
-
+int xPos = 0;
+int yPos = 0;
+boolean updateMousePos = true; 
 
 boolean calculateSpiral = true;
 
@@ -96,7 +98,7 @@ void draw() {
     translate(width/2-20, height/2);
     int i = 0;
     for (Pointer p : spiral) {
-      float d = dist(p.loc.x+width/2,p.loc.y+height/2, mouseX, mouseY);
+      float d = dist(p.loc.x+width/2,p.loc.y+height/2, xPos, yPos);
       if (d < 10) {
         fill(255, 0, 0);
         closestI = i;
@@ -117,7 +119,17 @@ void draw() {
 
   }
   
+  if(updateMousePos)
+  {
+  	xPos = mouseX;
+  	yPos = mouseY;
+  }
   
+}
+
+void mouseClicked()
+{
+	updateMousePos = !updateMousePos;
 }
 
 
@@ -133,8 +145,6 @@ int mapTheNumbers(float lowNum, float highNum) {
 	return hunchAdjustedNumber;
 
 }
-
-
 
 class Pointer {
 
