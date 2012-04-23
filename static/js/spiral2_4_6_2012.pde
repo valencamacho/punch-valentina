@@ -107,8 +107,6 @@ void draw() {
       i++;
     }
     
-    
-    
     currentI = int(lerp(currentI,closestI,0.1));
     
     Pointer closest = spiral.get(currentI);
