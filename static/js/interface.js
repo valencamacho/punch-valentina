@@ -70,7 +70,7 @@ var findClosestRec = function() {
 		
 		}
 			
-		console.log( ' adjusted hunch # = ' + adjustedHunchRecNum + '   current winner is: ' + jQuery(currentClosestRec).data('hunchstars') + ", recommendationDiff " + recommendationDiff );
+		//console.log( 'adjusted hunch # = ' + adjustedHunchRecNum + '   current winner is: ' + jQuery(currentClosestRec).data('hunchstars') );
 	
 	} );
 	
