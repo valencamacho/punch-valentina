@@ -36,7 +36,7 @@ var getSpiralValue = function() {
 	adjustedHunchRecNum = Processing.instances[0].mapTheNumbers(1.5,1.8);
 	//Processing.instances[0].getHunchRange() ); 
 	spiralNumDiv.innerHTML = Processing.instances[0].getHunchRange() + "   adjusted: " + adjustedHunchRecNum;
-	console.log("adjustedHunchRecNum = " + adjustedHunchRecNum + ", spiralNumDiv.innerHTML " + spiralNumDiv.innerHTML );
+	console.log(" adjustedHunchRecNum = " + adjustedHunchRecNum + ", spiralNumDiv.innerHTML " + spiralNumDiv.innerHTML + " " );
 	//console.log( Processing.instances[0].getHunchRange() ); 
 }
  
@@ -70,7 +70,7 @@ var findClosestRec = function() {
 		
 		}
 			
-		//console.log( 'adjusted hunch # = ' + adjustedHunchRecNum + '   current winner is: ' + jQuery(currentClosestRec).data('hunchstars') );
+		console.log( ' adjusted hunch # = ' + adjustedHunchRecNum + '   current winner is: ' + jQuery(currentClosestRec).data('hunchstars') + ", recommendationDiff " + recommendationDiff );
 	
 	} );
 	
