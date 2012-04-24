@@ -301,7 +301,7 @@ app.get('/recommendations/', function(request , response) {
     /* user_id = request.params.query.user_id */
     
     
-    var topics = "list_book";
+    var topics = "list_movie";
     
     // the url you need to request from hunch
     url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token="+auth_token+"&topic_ids="+topics+"&limit=200&reverse"
