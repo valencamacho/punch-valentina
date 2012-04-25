@@ -1,17 +1,18 @@
 
 <!-- <%= JSON.stringify(findings) %> -->
 
-<div class="row">
+<div class="wrapper">
 
-    <div class="span12">
-    	<div class="site-nav">
+    
+		<div id="header">
+			<div class="site-nav">
 				<ul>
-					<li><a href="/" title="About Zoom Out Me">About</a></li>
+					<li><a href="/about" title="About Zoom Out Me">About</a></li>
 					<li><a href="/" title="Search">Search</a></li>
 					<li><a href="/findings/" title="My Findings">My Findings</a></li>	
 				</ul>
-		</div>
-	 </div>
+			</div>
+		 </div><!--closing header-->
 			        
         <h2>Total de findings:  <%= findings.length %> </h2>
       
@@ -21,9 +22,10 @@
        <% for(var i=0; i < findings.length; i++) { %> 
             <!-- recommendation row -->
            
-            <div class="row">
+            <div id="leftcolumn">
+
                 <!-- left column -->
-                <div class="span6">
+               <!--  <div class="span6"> -->
                 	<form method="post" action="/home">
                     <b>
                         <a href="<%= findings[i].url %>"><%= findings[i].item %></a>
@@ -38,8 +40,8 @@
                     <img src="<%= findings[i].image %>">
                     
                 </div><!-- end of right column -->
-                <div class="subnav">
-                </div>
+               <!--  <div class="subnav"> -->
+               <!--  </div> -->
 
 
             </div><!-- end of recommendation row -->
