@@ -95,11 +95,14 @@
 				
 				
 				
-				<div class="span3">
+			<!--
+	<div class="span3">
 					<a href="<%= hunchRecs[i].url %>"><%= hunchRecs[i].title %></a>
 					<img src="<%= hunchRecs[i].image_urls[0] %>">
 					
 				</div><!-- end of right column -->
+				
+-->
 				<div class="subnav">
 					<button type="submit" class="btn btn-primary">Add to findings</button> 
 				</div>
@@ -109,9 +112,8 @@
 			</div><!-- end of recommendation row -->
 		<% } %>
             
-            	
-            
-                <img class="item" src="someImageFile.jpg" title="Your_Image_Title"/>
+            	<!-- <img class="item" src="<%= hunchRecs[i].image_urls[0] %>" title="Your_Image_Title"/> -->
+                <img class="item" src="<%= hunchRecs[i].image_urls[0] %>"/>
                 <!-- Add as many items as you like. -->
             </div>
             
