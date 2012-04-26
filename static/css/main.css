@@ -23,7 +23,7 @@ body {
 }
 #header {
  color: #333;
- width: 100%;
+ width: 1400px;
  float: left;
  height: 100px;
  background: #BD9C8C;
@@ -42,8 +42,8 @@ body {
  color: #333;
  /* border: 1px solid #ccc; */
  background: #E7DBD5;
- height: 800px;
- width: 424px;
+ height: 600px;
+ width: 800px;
 
 }
 #footer { 
