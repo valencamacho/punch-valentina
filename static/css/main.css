@@ -31,7 +31,7 @@ body {
 #leftcolumn { 
  color: #333;
  /* border: 1px solid #ccc; */
- background: #F2F2E6;
+ background: #e9e2d7;
  margin: 0px;
  height: 700px;
  width: 600px;
@@ -48,7 +48,7 @@ body {
 }
 #footer { 
  width: 1024px;
- height: 100px;
+ height: 50px;
  clear: both;
  color: #333;
  background: #BD9C8C;
