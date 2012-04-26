@@ -1,3 +1,7 @@
+<link rel="stylesheet" type="text/css" href="/css/contentflow_src.css" /> 
+<link rel="stylesheet" type="text/css" href="/css/contentflow.css" /> 
+<link rel="stylesheet" type="text/css" href="/css/ContentFlowAddOn_DEFAULT.css" /> 
+
 <!-- <div class="todo"> -->
 	<div id="wrapper">
 		
@@ -45,13 +49,22 @@
 		
 		<div id="rightcolumn">
 		
+		 <div class="ContentFlow">
+            <div class="loadIndicator">
+            	<div class="indicator"></div>
+            </div>
+            
+            <div class="flow">
+            
+            	
+		
 			<!-- looping through each recommendation -->
 	   		<% for(i=0; i<hunchRecs.length-1; i++) { %> 
 			<!-- recommendation row -->
 			 
 			<div class="recommendation row" data-hunchStars="<%= hunchRecs[i].stars %>">
 				<!-- left column -->
-				<div class="span6">
+				<div class="item">
 			  
 					<form method="post" action="/home">
 					<b>
@@ -79,6 +92,9 @@
 				<!-- end of left column -->
 				
 				<!-- Right column -->
+				
+				
+				
 				<div class="span3">
 					<a href="<%= hunchRecs[i].url %>"><%= hunchRecs[i].title %></a>
 					<img src="<%= hunchRecs[i].image_urls[0] %>">
@@ -92,6 +108,24 @@
 
 			</div><!-- end of recommendation row -->
 		<% } %>
+            
+            	
+            
+                <img class="item" src="someImageFile.jpg" title="Your_Image_Title"/>
+                <!-- Add as many items as you like. -->
+            </div>
+            
+            
+            
+          <!--
+  <div class="globalCaption"></div>
+            <div class="scrollbar"><div class="slider"><div class="position"></div>
+-->
+		</div></div>
+        </div>
+		
+		
+		
 
 		</div><!--closing righ column__>
 <!-- </div> -->
@@ -101,7 +135,7 @@ This is the footer
 
 </div><!--closing wrapper-->
 		
-		
+<script language="JavaScript" type="text/javascript" src="/js/coverflow/contentflow.js" load="AddOn_Name"></script>		
 <script src="/js/processing.js" type="text/javascript"></script>
 <script type="text/javascript">function getProcessingSketchID () { return 'spiral2462012'; }</script>
 <script src="/js/interface.js" type="text/javascript"></script>
