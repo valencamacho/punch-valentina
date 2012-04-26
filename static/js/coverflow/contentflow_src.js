@@ -693,7 +693,7 @@ ContentFlow.prototype = {
         activeElement: 'content', // item or content
 
         maxItemHeight: 0,
-        scaleFactor: 1,
+        scaleFactor: 2,
         scaleFactorLandscape: 1.33,
         scaleFactorPortrait: 1.0,
         fixItemSize: false,
