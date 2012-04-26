@@ -47,92 +47,48 @@
 		
 		<div id="rightcolumn">
 		
-		 <div class="ContentFlow">
-            <div class="loadIndicator">
-            	<div class="indicator"></div>
-            </div>
-            
-            <div class="flow">
-            
-            	
+			<div class="ContentFlow">
+            	<div class="flow">
+					<!-- looping through each recommendation -->
+						<% for(i=0; i<hunchRecs.length-1; i++) { %> 
+					<!-- recommendation row -->
+					 
+						<div class="recommendation row item" data-hunchStars="<%= hunchRecs[i].stars %>">
+						<!-- left column -->
+						 
+							<form method="post" action="/home">
+								<!-- <a href="<%= hunchRecs[i].url %>"><%= hunchRecs[i].title %></a> -->
+								<input type="hidden" name="user_id" value="<%= user_id%>">
+								<input type="hidden" name="item_id" value="<%= hunchRecs[i].result_id%>">
+								<input type="hidden" name="title" value="<%= hunchRecs[i].title %>">
+								<input type="hidden" name="item"	value="<%=hunchRecs[i].url%>">
+								<input type="hidden" name="image" value="<%=hunchRecs[i].image_urls[0] %>">
+								<input type="hidden" name="description" value="<%=hunchRecs[i].description %>">
+								<input type="hidden" name="recommend" value="<%=hunchRecs[i].recommend %>">
+							id: <%= hunchRecs[i].result_id %></br>
+							stars: <%= hunchRecs[i].stars %></br>
 		
-			<!-- looping through each recommendation -->
-	   		<% for(i=0; i<hunchRecs.length-1; i++) { %> 
-			<!-- recommendation row -->
-			 
-			<div class="recommendation row" data-hunchStars="<%= hunchRecs[i].stars %>">
-				<!-- left column -->
-				<div class="item">
-			  
-					<form method="post" action="/home">
-					<b>
-						<!-- <a href="<%= hunchRecs[i].url %>"><%= hunchRecs[i].title %></a> -->
-						<input type="hidden" name="user_id" value="<%= user_id%>">
-						<input type="hidden" name="item_id" value="<%= hunchRecs[i].result_id%>">
-						<input type="hidden" name="title" value="<%= hunchRecs[i].title %>">
-						<input type="hidden" name="item"  value="<%=hunchRecs[i].url%>">
-						<input type="hidden" name="image" value="<%=hunchRecs[i].image_urls[0] %>">
-						<input type="hidden" name="description" value="<%=hunchRecs[i].description %>">
-						<input type="hidden" name="recommend" value="<%=hunchRecs[i].recommend %>">
-					</b> - <%= hunchRecs[i].result_id %><br>
-					stars: <%= hunchRecs[i].stars %><br>
-				   <!--
- score:<br>
-					<!-- loop through all score array items -->
-					<!--
-<% for (s=0;s<hunchRecs[i].score.length; s++) { %>
-					
-					<span class="score"><%= hunchRecs[i].score[s] %></span><br>
+							</form>
+							<img class='content' src="<%= hunchRecs[i].image_urls[0] %>" title="<%=hunchRecs[i].title%>"/>
+							<!-- <img class="item" src="<%= hunchRecs[i].image_urls[0] %>" title="Your_Image_Title"/> -->
+							<!-- <img class="item" src="<%= hunchRecs[i].image_urls[0] %>"/> -->
+							<!-- Add as many items as you like. -->
+				
+		
+						</div><!-- end of recommendation row -->
 					<% } %>
--->
--->
-				</div>
-				<!-- end of left column -->
-				
-				<!-- Right column -->
-				
-				
-				
-			<!--
-	<div class="span3">
-					<a href="<%= hunchRecs[i].url %>"><%= hunchRecs[i].title %></a>
-					<img src="<%= hunchRecs[i].image_urls[0] %>">
-					
-				</div><!-- end of right column -->
-				
--->
-				<!--
-<div class="subnav">
-					<button type="submit" class="btn btn-primary">Add to findings</button> 
-				</div>
-				
--->
-				</form>
-				<img class="item" src="<%= hunchRecs[i].image_urls[0] %>"/>
+            
+        		</div><!-- end of flow-->
+				<!-- 
+				<div class="globalCaption"></div>
+            	<div class="scrollbar"><div class="slider"><div class="position"></div>
+				-->
+		
+			</div><!-- end of ContentFlow -->
+		</div><!--closing righ column-->
 
 
-			</div><!-- end of recommendation row -->
-		<% } %>
-            
-            	<!-- <img class="item" src="<%= hunchRecs[i].image_urls[0] %>" title="Your_Image_Title"/> -->
-                <!-- <img class="item" src="<%= hunchRecs[i].image_urls[0] %>"/> -->
-                <!-- Add as many items as you like. -->
-            </div>
-            
-            
-            
-          <!--
-  <div class="globalCaption"></div>
-            <div class="scrollbar"><div class="slider"><div class="position"></div>
--->
-		</div></div>
-        </div>
-		
-		
-		
 
-		</div><!--closing righ column__>
-<!-- </div> -->
 <div id="footer">
 This is the footer
 </div>
