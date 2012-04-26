@@ -75,11 +75,9 @@ var findClosestRec = function() {
 	} );
 	
 	//show and hide of recommendations
-	jQuery('div.recommendation').show(); //hide all
+	jQuery('div.recommendation').hide(); //hide all
 	
-	/*
-jQuery(currentClosestRec).show();
+	jQuery(currentClosestRec).show();
 	jQuery(currentClosestRec).prev().show();
 	jQuery(currentClosestRec).next().show();
-*/
 }
