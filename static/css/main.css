@@ -33,7 +33,7 @@ body {
  /* border: 1px solid #ccc; */
  background: #F2F2E6;
  margin: 0px;
- height: 600px;
+ height: 700px;
  width: 600px;
  float: left;
 }
@@ -42,12 +42,13 @@ body {
  color: #333;
  /* border: 1px solid #ccc; */
  background: #E7DBD5;
- height: 600px;
+ height: 700px;
  width: 800px;
 
 }
 #footer { 
  width: 1024px;
+ height: 100px;
  clear: both;
  color: #333;
  background: #BD9C8C;
