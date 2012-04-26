@@ -17,7 +17,7 @@ body {
 }
 #wrapper { 
  margin: 0 auto;
- width: 100%;
+ width: 1024px;
  padding: 10px;
 
 }
@@ -43,11 +43,11 @@ body {
  /* border: 1px solid #ccc; */
  background: #E7DBD5;
  height: 800px;
- width: 600px;
+ width: 424px;
 
 }
 #footer { 
- width: 100%;
+ width: 1024px;
  clear: both;
  color: #333;
  background: #BD9C8C;
