@@ -11,7 +11,7 @@ window.onload = function () {
 
 var zoomOutSketch;
 var adjustedHunchRecNum;
-
+var shortListRecs;
 var currentClosestRec = null;
 var currentClosestDifference = 0;
 
@@ -78,7 +78,7 @@ var findClosestRec = function() {
 	jQuery('div.recommendation').hide(); //hide all
 	var firstRec = jQuery(currentClosestRec).prev();
 	var nextRec = jQuery(currentClosestRec).next();
-	var shortListRecs = [firstRec,currenClosestRec,nextRec];
+	shortListRecs = [firstRec,currenClosestRec,nextRec];
 	//jQuery(currentClosestRec).show();
 	//jQuery(currentClosestRec).prev().show();
 	//jQuery(currentClosestRec).next().show();

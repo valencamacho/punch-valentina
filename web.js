@@ -314,7 +314,8 @@ app.get('/recommendations/', function(request , response) {
 
             // convert hunchJSON into JS object, hunchData
             hunchData = JSON.parse(hunchJSON);
-
+			
+						
             // prepare template variables
             var templateData = {
             	
