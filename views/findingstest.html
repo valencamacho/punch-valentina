@@ -3,48 +3,49 @@
 
 <div class="wrapper">
 
+	<div id="header">
+		<div class="site-nav">
+			<ul>
+				<li><a href="/about" title="About Zoom Out Me">About</a></li>
+				<li><a href="/" title="Search">Search</a></li>
+				<li><a href="/findings/" title="My Findings">My Findings</a></li>	
+			</ul>
+		</div>
+	 </div><!--closing header-->
+	 
+	<div id="leftcolumn">
+	
+		<h2>Total de findings:  <%= findings.length %> </h2>
+  
+     	<h2>user: <%= user_id%></h2>s
     
-		<div id="header">
-			<div class="site-nav">
-				<ul>
-					<li><a href="/about" title="About Zoom Out Me">About</a></li>
-					<li><a href="/" title="Search">Search</a></li>
-					<li><a href="/findings/" title="My Findings">My Findings</a></li>	
-				</ul>
-			</div>
-		 </div><!--closing header-->
-			        
-        <h2>Total de findings:  <%= findings.length %> </h2>
-      
-        user: <%= user_id%>
-        
-        <!-- looping through each recommendation -->
-       <% for(var i=0; i < findings.length; i++) { %> 
-            <!-- recommendation row -->
-           
-            <div id="row">
-				<!-- left column -->
-                <div class="span6">
-                <form method="post" action="/home">
-                    <b>
-                        <a href="<%= findings[i].url %>"><%= findings[i].item %></a>
+    	<!-- looping through each recommendation -->
+   		<% for(var i=0; i < findings.length; i++) { %> 
+        <!-- recommendation row -->
+       
+        <div id="content">
+			
+			<div class="row">
+            	<form method="post" action="/home">
+                	<b>
+                    	<a href="<%= findings[i].url %>"><%= findings[i].item %></a>
 
-                    </b> - <%= findings[i].item_id %><br>
-                    <!-- loop through all score array items -->
+                	</b> - <%= findings[i].item_id %><br>
+               		 <!-- loop through all score array items -->
 
-                </div><!-- end of left column -->
+     </div><!-- end of left column -->
+            
+            <!-- Right column -->
+     <div class="rightcolumn">
+          <img src="<%= findings[i].image %>">
                 
-                <!-- Right column -->
-                <div class="row">
-                    <img src="<%= findings[i].image %>">
-                    
-                </div><!-- end of right column -->
-                <div class="subnav">
-               <!--  </div> -->
+            </div><!-- end of right column -->
+            <div class="subnav">
+           <!--  </div> -->
 
 
-            </div><!-- end of recommendation row -->
-        <% } %>
+        </div><!-- end of recommendation row -->
+    <% } %>
 
     </div>
 </div>
