@@ -300,34 +300,37 @@ app.get('/recommendations/', function(request , response) {
     auth_token = request.cookies.auth_token
     /* user_id = request.params.query.user_id */
     
-    
+    var cutfactor = 200;
+    var maxresults = 4000;
     var topics = "list_book";
-    
+    var counter = 0;
     // the url you need to request from hunch
-    url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token="+auth_token+"&topic_ids="+topics+"&limit=4000&reverse"
+    url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token="+auth_token+"&topic_ids="+topics+"&limit="+maxresults+"&reverse"
     
     // make the request to Hunch api
     requestURL(url, function (error, httpResponse, hunchJSON) {
-        
+        if (counter % cutfactor == 0){
         // if successful
-        if (!error && httpResponse.statusCode == 200) {
-
-            // convert hunchJSON into JS object, hunchData
-            hunchData = JSON.parse(hunchJSON);
-			
-						
-            // prepare template variables
-            var templateData = {
-            	
-            	'user_id'	: request.cookies.user_id,
-                'url' 		: url,
-                'totalRecs' : hunchData.total,
-                'hunchRecs' : hunchData.recommendations
-            }
-            
-            // render the template with templateData
-            response.render("hunch_display.html",templateData)
+	        if (!error && httpResponse.statusCode == 200) {
+	
+	            // convert hunchJSON into JS object, hunchData
+	            hunchData = JSON.parse(hunchJSON);
+				
+							
+	            // prepare template variables
+	            var templateData = {
+	            	
+	            	'user_id'	: request.cookies.user_id,
+	                'url' 		: url,
+	                'totalRecs' : hunchData.total,
+	                'hunchRecs' : hunchData.recommendations
+	            }
+	            
+	            // render the template with templateData
+	            response.render("hunch_display.html",templateData)
+	        }
         }
+       	counter = counter + 1; 
     });
 
 });
