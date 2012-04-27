@@ -76,8 +76,10 @@ var findClosestRec = function() {
 	
 	//show and hide of recommendations
 	jQuery('div.recommendation').hide(); //hide all
-	
-	jQuery(currentClosestRec).show();
-	jQuery(currentClosestRec).prev().show();
-	jQuery(currentClosestRec).next().show();
+	var firstRec = jQuery(currentClosestRec).prev();
+	var nextRec = jQuery(currentClosestRec).next();
+	var shortListRecs = [firstRec,currenClosestRec,nextRec];
+	//jQuery(currentClosestRec).show();
+	//jQuery(currentClosestRec).prev().show();
+	//jQuery(currentClosestRec).next().show();
 }
