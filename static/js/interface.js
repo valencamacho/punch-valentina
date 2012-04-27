@@ -47,6 +47,7 @@ var hunchRecs.length = function (){
 	}
 */
 
+/*
 var findClosestRec = function() {
 	currentClosestRec = null;
 	currentClosestDifference = 0.0;
@@ -83,3 +84,4 @@ var findClosestRec = function() {
 	jQuery(currentClosestRec).next().show();
 
 	}
+*/
