@@ -44,8 +44,18 @@ body {
  background: #E7DBD5;
  height: 610px;
  width: 800px;
+}
+
+#row {
+width:400 px;
 
 }
+
+.content {
+border: fuchsia;
+}
+
+
 #footer { 
  width: 1400px;
  height: 20px;
