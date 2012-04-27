@@ -300,8 +300,8 @@ app.get('/recommendations/', function(request , response) {
     auth_token = request.cookies.auth_token
     /* user_id = request.params.query.user_id */
     
-    var cutfactor = 200;
-    var maxresults = 4000;
+    var cutfactor = 20;
+    var maxresults = 200;
     var topics = "list_book";
     var counter = 0;
     // the url you need to request from hunch
