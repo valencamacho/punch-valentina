@@ -299,18 +299,26 @@ app.get('/recommendations/', function(request , response) {
     // get the auth token from the url
     auth_token = request.cookies.auth_token
     /* user_id = request.params.query.user_id */
-    
+  /*
+  
     var cutfactor = 20;
-    var maxresults = 200;
-    var topics = "list_book";
-    var counter = 0;
+    var maxresults = 4000;
+*/
+    var topics = "list_movie";
+   /*  var counter = 0; */
     // the url you need to request from hunch
-    url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token="+auth_token+"&topic_ids="+topics+"&limit="+maxresults+"&reverse"
+    /*
+    var val=counter * cutfactor;
+    
+    url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token="+auth_token+"&topic_ids="+topics+"&limit=1&offset="+val+"&reverse"
+    
+    */
+    //url = "http://localhost:5000/myhunch.json"
+    url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token="+auth_token+"&topic_ids="+topics+"&limit=500&reverse"
     
     // make the request to Hunch api
     requestURL(url, function (error, httpResponse, hunchJSON) {
-        if (counter % cutfactor == 0){
-        // if successful
+       
 	        if (!error && httpResponse.statusCode == 200) {
 	
 	            // convert hunchJSON into JS object, hunchData
@@ -329,8 +337,6 @@ app.get('/recommendations/', function(request , response) {
 	            // render the template with templateData
 	            response.render("hunch_display.html",templateData)
 	        }
-        }
-       	counter = counter + 1; 
     });
 
 });
