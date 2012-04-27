@@ -55,9 +55,11 @@ margin-left: 30px;
 .content {
 border: 5px solid grey;
 width: 200px;
-display: table-column;
 }
 
+.item{
+display: inline-block;
+}
 
 #footer { 
  width: 1400px;
