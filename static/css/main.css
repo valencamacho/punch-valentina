@@ -30,6 +30,7 @@ body {
 }
 #logonav{
  padding-left: 10px;
+ float:left;
 }
 
 #leftcolumn { 
@@ -43,7 +44,8 @@ body {
 }
 
 .site-nav{
-margin-left: 400px;
+padding-left: 400px;
+float:right;
 
 }
 
