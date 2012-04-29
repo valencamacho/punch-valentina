@@ -4,7 +4,7 @@ body {
 
 a { 
     color: #00c;
-    /* text-decoration: underline; */
+    text-decoration: underline;
 }
 
 
@@ -17,17 +17,17 @@ textarea {
 
 .btn-primary {
 background-color: #0074CC;
-/* background-image: -webkit-linear-gradient(top, #08C, #05C); */
+background-image: -webkit-linear-gradient(top, #08C, #05C);
 
 .btn-primary a{
     background-color: #0074cc;
-   /*  background-image: -webkit-linear-gradient(top, #08C, #05C); */
+    background-image: -webkit-linear-gradient(top, #08C, #05C);
  }
  
 .btn-primary a:visited{
     color: #eb4a54;
-    /* background-color: #b21039; */
-  /*   background-image:-webkit-linear-gradient(bottom,#08C,#05C); */
+    background-color: #b21039; 
+    background-image:-webkit-linear-gradient(bottom,#08C,#05C);
     }
  
 .btn-primary a:hover{
