@@ -37,6 +37,12 @@ body {
  width: 600px;
  float: left;
 }
+
+.site-nav{
+margin-left: 200px;
+
+}
+
 #rightcolumn { 
  float: right;
  color: #333;
