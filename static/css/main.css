@@ -28,6 +28,10 @@ body {
  height: 100px;
  background: #e9e2d8;
 }
+#logonav{
+ padding-left: 10px;
+}
+
 #leftcolumn { 
  color: #333;
  /* border: 1px solid #ccc; */
