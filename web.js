@@ -314,7 +314,7 @@ app.get('/recommendations/', function(request , response) {
     
     */
     //url = "http://localhost:5000/myhunch.json"
-    url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token="+auth_token+"&topic_ids="+topics+"&limit=200&offset=100&reverse"
+    url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token="+auth_token+"&topic_ids="+topics+"&limit=300&reverse"
     
     // make the request to Hunch api
     requestURL(url, function (error, httpResponse, hunchJSON) {
