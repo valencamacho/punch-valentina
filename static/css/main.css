@@ -43,13 +43,6 @@ body {
  float: left;
 }
 
-navbarme{
-background-color: rgb(238,232,224);
-width:1020px;
-height:100px;
-
-}
-
 
 element.style {
 height: 258px;
@@ -86,7 +79,7 @@ height: 258px;
  float: right;
  color: #333;
  /* border: 1px solid #ccc; */
- background: #E7DBD5;
+ background: white;
  height: 610px;
  width: 800px;
 }
