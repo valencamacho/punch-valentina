@@ -58,7 +58,7 @@ void draw() {
 
   if (calculateSpiral) {
 
-    background(238,232,224);
+    background(255);
 
     float factor = 2;
     float dtheta = 0.017*factor;
