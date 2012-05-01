@@ -232,6 +232,7 @@ app.get('/findings', function(request, response){
 
 
 
+/*
 app.get('/finding/:objectid', function(request, response){
 	 Finding.findById(request.params.objectid,function(err,post){
 	        if (err) {
@@ -263,6 +264,7 @@ app.get('/finding/:objectid', function(request, response){
 	    });
 	});
 });
+*/
 
 
 /*
