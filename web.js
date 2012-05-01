@@ -230,8 +230,6 @@ app.get('/findings', function(request, response){
 });
 
 
-<<<<<<< HEAD
-=======
 
 
 app.get('/finding/:objectid', function(request, response){
@@ -267,7 +265,7 @@ app.get('/finding/:objectid', function(request, response){
 });
 
 
->>>>>>> parent of d225a60... comment findings.html in web js
+
 /*
 // return all blog entries in json format- my API!!!
 app.get('/json/allposts', function(request, response){
