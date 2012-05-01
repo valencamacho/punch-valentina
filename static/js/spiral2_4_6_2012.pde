@@ -45,7 +45,7 @@ void setup() {
   spiralImage = createImage(width, height, RGB);
   
   // pull from website's xml what that number is
-  hunchResults = 400;//instead of 4000 it should be the call from the API
+  hunchResults = 4000;//instead of 4000 it should be the call from the API
   
   // whenever the user clicks on the spiral
   //changePage();
