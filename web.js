@@ -7,6 +7,8 @@ var app = express.createServer(express.logger());
 var mongoose = require('mongoose'); // include Mongoose MongoDB library
 var schema = mongoose.Schema; 
 
+var async = require('async');
+
 /* HUNCH API AUTH CONFIG */
 var crypto = require('crypto')
 var shasum = crypto.createHash('sha1');
@@ -294,6 +296,22 @@ app.get('/json/allposts', function(request, response){
 */
 
 
+var fetchURL = function(url, callback) {
+    // used in the ASYNC example
+    // make the url request to hunch, then return with 'callback'
+    requestURL(url, function(err, http, data) {
+        if (err) {
+            callback(err, null); //error is 1st argument, null (result) 2nd because there was an errof
+        }
+        
+        if (data) {
+            jsData = JSON.parse(data);
+            callback(null, jsData);
+        }
+    });
+}
+
+
 /***************  GET RECOMMENDATIONS BY AUTH_TOKEN  ****************/
 app.get('/recommendations/', function(request , response) {
     
@@ -315,7 +333,9 @@ app.get('/recommendations/', function(request , response) {
     
     */
     //url = "http://localhost:5000/myhunch.json"
-    url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token="+auth_token+"&topic_ids="+topics+"&limit=500&reverse"
+    
+    
+    /*url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token="+auth_token+"&topic_ids="+topics+"&limit=500&reverse"
     
     // make the request to Hunch api
     requestURL(url, function (error, httpResponse, hunchJSON) {
@@ -338,6 +358,46 @@ app.get('/recommendations/', function(request , response) {
 	            // render the template with templateData
 	            response.render("hunch_display.html",templateData)
 	        }
+    });*/
+    
+    
+    
+    var url1 ="http://api.hunch.com/api/v1/get-recommendations/?auth_token=6275cb220d05d45e411be1358cdcd7a765a1c80b&topic_ids=list_movie&limit=200";
+    
+    var url2 = "http://api.hunch.com/api/v1/get-recommendations/?auth_token=6275cb220d05d45e411be1358cdcd7a765a1c80b&topic_ids=list_movie&limit=200&reverse"
+    
+    // using the ASYNC module, we will request both urls at the same time with .parallel
+    // both will get requested at the same time and when finished will 
+    async.parallel({
+        url1 : function(callback) {
+            fetchURL(url1,callback);
+        },
+        
+        url2 : function(callback) {
+            fetchURL(url2,callback);
+        },
+    }, 
+    function(err, results){
+        var url1Recs = results.url1.recommendations;
+        var url2Recs = results.url2.recommendations;
+        
+        var combined = url1Recs.concat(url2Recs);
+        
+        data = {
+            length : combined.length
+            , recommendations : combined
+        }
+         // prepare template variables
+        var templateData = {
+        	
+        	'user_id'	: request.cookies.user_id,
+            'url' 		: url1,
+            'totalRecs' : combined.length,
+            'hunchRecs' : combined
+        }
+        
+        // render the template with templateData
+        response.render("hunch_display.html",templateData)
     });
 
 });
