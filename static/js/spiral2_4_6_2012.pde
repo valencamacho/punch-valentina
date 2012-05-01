@@ -139,7 +139,7 @@ int getHunchRange() {
 
 int mapTheNumbers(float lowNum, float highNum) {
 
-	hunchAdjustedNumber = map(getHunchRange(), 0, hunchResults,lowNum, highNum );
+	hunchAdjustedNumber = map(getHunchRange(), 0, 400,lowNum, highNum );
 	return hunchAdjustedNumber;
 
 }
