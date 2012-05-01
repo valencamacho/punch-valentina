@@ -230,43 +230,6 @@ app.get('/findings', function(request, response){
 });
 
 
-
-
-/*
-app.get('/finding/:objectid', function(request, response){
-	 Finding.findById(request.params.objectid,function(err,post){
-	        if (err) {
-	            console.log('error');
-	            console.log(err);
-	            response.send("uh oh, can't find that recommendation");
-	        }
-	        
-	          // build the query
-	    var query = Finding.find({});
-	    query.sort('date',-1); //sort by date in descending order
-	    
-	    // run the query and display blog_main.html template if successful
-	    query.exec({}, function(err, allPosts){
-	        
-	        // prepare template data
-	        templateData = {
-	        	'url' : url,
-                'totalRecs' : hunchData.total,
-                'hunchRecs' : hunchData.recommendations
-
-	        }     
-	          
-	          console.log(post); 
-	
-	        
-	        // found the blogpost
-	        response.render("findings.html", templateData);
-	    });
-	});
-});
-*/
-
-
 /*
 // return all blog entries in json format- my API!!!
 app.get('/json/allposts', function(request, response){
