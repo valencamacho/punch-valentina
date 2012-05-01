@@ -1,4 +1,4 @@
-This code demonstrates how to use ExpressJS Node Framework with MongoDB on Heroku
+This code is what I did for my project Zoom Out.Me as my thesis for ITP 2012
 
 ## Get the code
 
@@ -108,3 +108,7 @@ We will be using Mongoose library to connect to our database. Update your **web.
 
 There is a new file called **models.js**, this includes the data definitions or schema for your database. You will define what data you will be saving in your Mongo collection. See the Mongoose web site for more information, http://mongoosejs.com/
 
+###You also need:
+- Create an account in www.hunch.com
+- Create an application based on the Hunch API http://hunch.com/developers/self-service/signup/
+- 
