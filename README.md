@@ -111,4 +111,5 @@ There is a new file called **models.js**, this includes the data definitions or 
 ##You also need:
  *  Create an account in www.hunch.com. 
  *  Create an application based on the Hunch API http://hunch.com/developers/self-service/signup/
- *  Get 
+ *  Get your auth-token and secret auth-token and insert them in the web.js file 
+ *  The intro was made by using scrollpath http://joelb.me/scrollpath/, you can see here the github of the project: https://github.com/JoelBesada/scrollpath
