@@ -109,4 +109,6 @@ We will be using Mongoose library to connect to our database. Update your **web.
 There is a new file called **models.js**, this includes the data definitions or schema for your database. You will define what data you will be saving in your Mongo collection. See the Mongoose web site for more information, http://mongoosejs.com/
 
 ###You also need:
-Create an account in www.hunch.com. Create an application based on the Hunch API http://hunch.com/developers/self-service/signup/
+ *  Create an account in www.hunch.com. 
+ *  Create an application based on the Hunch API http://hunch.com/developers/self-service/signup/
+ *  Get 
