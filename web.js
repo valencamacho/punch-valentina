@@ -362,7 +362,7 @@ app.get('/recommendations/', function(request , response) {
     
     
     
-    var url1 ="http://api.hunch.com/api/v1/get-recommendations/?auth_token=6275cb220d05d45e411be1358cdcd7a765a1c80b&topic_ids=list_movie&offset=50";
+    var url1 ="http://api.hunch.com/api/v1/get-recommendations/?auth_token=6275cb220d05d45e411be1358cdcd7a765a1c80b&topic_ids=list_movie&limit=200&offset=100";
     
     var url2 = "http://api.hunch.com/api/v1/get-recommendations/?auth_token=6275cb220d05d45e411be1358cdcd7a765a1c80b&topic_ids=list_movie&limit=300&reverse"
     
