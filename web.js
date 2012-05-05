@@ -364,8 +364,7 @@ app.get('/recommendations/', function(request , response) {
     
     var url1 ="http://api.hunch.com/api/v1/get-recommendations/?auth_token=6275cb220d05d45e411be1358cdcd7a765a1c80b&topic_ids=list_movie&limit=10";
     
-    var url2 = "http://api.hunch.com/api/v1/get-recommendations/?auth_token=6275cb220d05d45e411be1358cdcd7a765a1c80b&topic_ids=list_movie&limit=400&offset=100&reverse"
-    /* var url3 = "http://api.hunch.com/api/v1/get-recommendations/?auth_token=6275cb220d05d45e411be1358cdcd7a765a1c80b&topic_ids=list_movie&limit=1000&offset=400&reverse" */
+    var url2 = "http://api.hunch.com/api/v1/get-recommendations/?auth_token=6275cb220d05d45e411be1358cdcd7a765a1c80b&topic_ids=list_movie&limit=400&reverse"
     
     // using the ASYNC module, we will request both urls at the same time with .parallel
     // both will get requested at the same time and when finished will 
@@ -377,17 +376,12 @@ app.get('/recommendations/', function(request , response) {
         url2 : function(callback) {
             fetchURL(url2,callback);
         },
-        url3 : function(callback){
-        	fetchURL(url3,callback);
-        },
     }, 
     function(err, results){
         var url1Recs = results.url1.recommendations;
         var url2Recs = results.url2.recommendations;
-     /*    var url3Recs = results.url3.recommendations; */
         
         var combined = url1Recs.concat(url2Recs);
-       /*  var combined = url1Recs.concat(url3Recs); */
         
         data = {
             length : combined.length
@@ -397,7 +391,7 @@ app.get('/recommendations/', function(request , response) {
         var templateData = {
         	
         	'user_id'	: request.cookies.user_id,
-            'url' 		: url1
+            'url' 		: url1,
             'totalRecs' : combined.length,
             'hunchRecs' : combined
         }
