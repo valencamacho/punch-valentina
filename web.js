@@ -396,7 +396,7 @@ app.get('/recommendations/', function(request , response) {
         var templateData = {
         	
         	'user_id'	: request.cookies.user_id,
-            'url' 		: url1,url2
+            'url' 		: url1
             'totalRecs' : combined.length,
             'hunchRecs' : combined
         }
