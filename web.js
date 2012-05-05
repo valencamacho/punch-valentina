@@ -387,6 +387,7 @@ app.get('/recommendations/', function(request , response) {
         var url3Recs = results.url3.recommendations;
         
         var combined = url1Recs.concat(url2Recs);
+        var combined = url1Recs.concat(url3Recs);
         
         data = {
             length : combined.length
