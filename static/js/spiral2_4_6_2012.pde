@@ -45,7 +45,7 @@ void setup() {
   spiralImage = createImage(width, height, RGB);
   
   // pull from website's xml what that number is
-  hunchResults = 3000;//instead of 4000 it should be the call from the API
+  hunchResults = 4000;//instead of 4000 it should be the call from the API
   
   // whenever the user clicks on the spiral
   //changePage();
@@ -139,7 +139,7 @@ int getHunchRange() {
 
 int mapTheNumbers(float lowNum, float highNum) {
 
-	hunchAdjustedNumber = map(getHunchRange(), 0, 500,lowNum, highNum );
+	hunchAdjustedNumber = map(getHunchRange(), 0, 300,lowNum, highNum );
 	return hunchAdjustedNumber;
 
 }
