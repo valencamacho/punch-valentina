@@ -31,7 +31,7 @@ table {
 /* === End of CSS RESET === */
 
 body {
-	background: url(/img/hexellence.png);
+	background: url('/img/hexellence.png')!important;
 	color: white;
 	font-size: 20px;
 	font-family: "Terminal Dosis", sans-serif;
