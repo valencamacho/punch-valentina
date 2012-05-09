@@ -176,6 +176,31 @@ height: 258px;
     
     
     
+    
+    
+    /*RECOMMENDATIONS*/
+    
+    
+    .row {}
+    .recomendation.item {
+    	float:left;
+    	margin-right: 10px;
+    
+    }
+
+    .recomendation.item.prev {
+    	
+    }
+    .recomendation.item.selected {}
+    .recomendation.item.next {
+    	margin-right: 0;
+    	}
+   
+    .recommendation.item.prev img, .recommendation.item.next img{
+    	width:150px;
+    }
+    
+    
     /*MAYBE USEFUL BUT NOT REALLY*/
 
 
