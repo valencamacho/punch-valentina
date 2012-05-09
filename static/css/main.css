@@ -80,6 +80,7 @@ height: 258px;
  color: #333;
  /* border: 1px solid #ccc; */
  background: white;
+ width:50%;
 }
 
 #row {
@@ -182,17 +183,17 @@ height: 258px;
     
     
     .row {}
-    .recomendation.item {
+    .recommendation.item {
     	float:left;
     	margin-right: 10px;
     
     }
 
-    .recomendation.item.prev {
+    .recommendation.item.prev {
     	
     }
-    .recomendation.item.selected {}
-    .recomendation.item.next {
+    .recommendation.item.selected {}
+    .recommendation.item.next {
     	margin-right: 0;
     	}
    
