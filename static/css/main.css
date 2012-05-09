@@ -38,10 +38,9 @@ body {
  /* border: 1px solid #ccc; */
  background: #e9e2d7;
  margin: 0px;
- height: 610px;
- width: ;
+ width: 600px;
  float: left;
- margin-left:600px
+ 
 }
 
 
@@ -81,8 +80,6 @@ height: 258px;
  color: #333;
  /* border: 1px solid #ccc; */
  background: white;
- height: 610px;
- width: 800px;
 }
 
 #row {

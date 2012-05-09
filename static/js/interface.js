@@ -76,10 +76,10 @@ var findClosestRec = function() {
 	
 	
 	
-	jQuery('div.recommendation').hide(); //hide all
+	jQuery('div.recommendation').hide().removeClass('selected prev next'); //hide all
 	
-	jQuery(currentClosestRec).show();
-	jQuery(currentClosestRec).prev().show();
-	jQuery(currentClosestRec).next().show();
+	jQuery(currentClosestRec).show().addClass('selected');
+	jQuery(currentClosestRec).prev().show().addClass('prev');
+	jQuery(currentClosestRec).next().show().addClass('next');
 
 	}
