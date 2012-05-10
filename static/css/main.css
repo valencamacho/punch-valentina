@@ -211,6 +211,7 @@ height: 258px;
     	float: left;
     	margin-right:30px;
     	margin-bottom: 20px;
+    	width:200px;
     	}
     #findings-list li:last-child {
     	margin-right:0px;
@@ -218,6 +219,9 @@ height: 258px;
 
     #findings-list li img {
     	width:200px;
+    }
+     #findings-list li p {
+    	max-height:100px;
     }
     
     
