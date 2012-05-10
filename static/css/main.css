@@ -211,7 +211,7 @@ height: 258px;
     	float: left;
     	margin-right:30px;
     	margin-bottom: 20px;
-    	width:200px;
+    	width:204px;
     	}
     #findings-list li:last-child {
     	margin-right:0px;
@@ -220,9 +220,14 @@ height: 258px;
     #findings-list li img {
     	width:200px;
     	margin-bottom: 10px;
+    	border: 2px solid #666;
     }
      #findings-list li p {
     	max-height:104px;
+    	color:black;
+    	font-size: 11px;
+    	line-height: 14px;
+    	margin-bottom: 10px;
     }
     
     
