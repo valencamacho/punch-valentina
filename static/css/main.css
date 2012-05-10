@@ -205,6 +205,23 @@ height: 258px;
     }
     
     
+    /*FINDINGS*/
+    
+    #findings-list li {
+    	float: left;
+    	margin-right:30px;
+    	margin-bottom: 20px;
+    	}
+    #findings-list li:last-child {
+    	margin-right:0px;
+    	}	
+
+    #findings-list li img {
+    	width:200px;
+    }
+    
+    
+    
     /*MAYBE USEFUL BUT NOT REALLY*/
 
 

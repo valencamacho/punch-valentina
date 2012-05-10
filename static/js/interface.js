@@ -240,7 +240,7 @@ var findClosestRec = function() {
 	
 	
 	
-	jQuery('div.recommendation').hide().removeClass('selected prevnextPage()t'); //hide all
+	jQuery('div.recommendation').hide().removeClass('selected prev next'); //hide all
 	
 	jQuery(currentClosestRec).show().addClass('selected');
 	jQuery(currentClosestRec).prev().show().addClass('prev');
