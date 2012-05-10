@@ -167,7 +167,7 @@ jQuery(document).ready(function(){
 window.onload = function () {
     tryFindSketch();
     
-    setInterval(getSpiralValue, 10);
+    setInterval(getSpiralValue, 100);
     setInterval(findClosestRec, 1000); //1 second delay on filtering recommendation rows
     
 }
@@ -196,7 +196,7 @@ function tryFindSketch () {
 var getSpiralValue = function() {
 	spiralNumDiv = document.getElementById('spiralNumberContainer');
 	
-	adjustedHunchRecNum = Processing.instances[0].mapTheNumbers(1.14,1.45);
+	adjustedHunchRecNum = Processing.instances[0].mapTheNumbers(1.14,3.2);
 	//Processing.instances[0].getHunchRange() ); 
 	spiralNumDiv.innerHTML = Processing.instances[0].getHunchRange() + "   adjusted: " + adjustedHunchRecNum;
 	/* console.log(" adjustedHunchRecNum = " + adjustedHunchRecNum + ", spiralNumDiv.innerHTML " + spiralNumDiv.innerHTML + " " ); */
