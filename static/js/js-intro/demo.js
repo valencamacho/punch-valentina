@@ -49,7 +49,7 @@ function init() {
 		.arc(1300, 50, 900, -Math.PI/2, -Math.PI, true, {rotate: Math.PI*2, name: "end"});
 
 	// We're done with the path, let's initate the plugin on our wrapper element
-	$(".wrapper").scrollPath({drawPath: true, wrapAround: true});
+	$(".wrapperhome").scrollPath({drawPath: true, wrapAround: true});
 
 	// Add scrollTo on click on the navigation anchors
 	$(".navigation").find("a").each(function() {
