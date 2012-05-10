@@ -95,10 +95,6 @@ margin-left: 30px;
 
 }
 
-.content {
-border: 5px solid grey;
-width: 200px;
-}
 
 #footer { 
  width: 1400px;
@@ -185,20 +181,27 @@ height: 258px;
     .row {}
     .recommendation.item {
     	float:left;
-    	margin-right: 10px;
+    	margin-right: 30px;
     
     }
 
-    .recommendation.item.prev {
-    	
-    }
     .recommendation.item.selected {}
+
+    .recommendation.item.prev, .recommendation.item.next {
+    	margin-top: 75px;
+    }
     .recommendation.item.next {
     	margin-right: 0;
     	}
-   
-    .recommendation.item.prev img, .recommendation.item.next img{
-    	width:150px;
+
+    .recommendation.item.prev .content, .recommendation.item.next .content{
+    	height:200px;
+    	border:solid 2px #666;
+    	
+    }
+    .recommendation.item.selected .content {
+    	height:350px;
+    	border:solid 2px #d00;
     }
     
     

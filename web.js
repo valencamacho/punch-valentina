@@ -224,7 +224,7 @@ app.get('/findings', function(request, response){
 	            console.log(err);
 	            return response.send("uh oh, can't find that recommendation");
 	        }
-			var templateData = {'findings' : findings};
+			var templateData = {'findings' : findings, 'user_id' : request.cookies.user_id};
 	        response.render("findingstest.html",templateData);
    
         });
@@ -268,33 +268,6 @@ app.get('/finding/:objectid', function(request, response){
 
 
 
-/*
-// return all blog entries in json format- my API!!!
-app.get('/json/allposts', function(request, response){
-
-    // define the fields you want to include in your json data
-   
-    includeFields = ['item','image','date']
-
-    // query for all blog
-    queryConditions = {}; //empty conditions - return everything
-    var query = Finding.find( queryConditions, includeFields);
-
-    query.sort('date',-1); //sort by most recent
-    query.exec(function (err, finding) {
-
-        // render the card_form template with the data above
-        jsonData = {
-          'status' : 'OK',
-          'posts' : finding
-        }
-
-        response.json(jsonData);
-    });
-});
-
-*/
-
 
 var fetchURL = function(url, callback) {
     // used in the ASYNC example
@@ -317,48 +290,6 @@ app.get('/recommendations/', function(request , response) {
     
     // get the auth token from the url
     auth_token = request.cookies.auth_token
-    /* user_id = request.params.query.user_id */
-  /*
-  
-    var cutfactor = 20;
-    var maxresults = 4000;
-*/
-    //var topics = "list_movie";
-   /*  var counter = 0; */
-    // the url you need to request from hunch
-    /*
-    var val=counter * cutfactor;
-    
-    url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token="+auth_token+"&topic_ids="+topics+"&limit=1&offset="+val+"&reverse"
-    
-    */
-    //url = "http://localhost:5000/myhunch.json"
-    
-    
-    /*url = "http://api.hunch.com/api/v1/get-recommendations/?auth_token="+auth_token+"&topic_ids="+topics+"&limit=500&reverse"
-    
-    // make the request to Hunch api
-    requestURL(url, function (error, httpResponse, hunchJSON) {
-       
-	        if (!error && httpResponse.statusCode == 200) {
-	
-	            // convert hunchJSON into JS object, hunchData
-	            hunchData = JSON.parse(hunchJSON);
-				
-							
-	            // prepare template variables
-	            var templateData = {
-	            	
-	            	'user_id'	: request.cookies.user_id,
-	                'url' 		: url,
-	                'totalRecs' : hunchData.total,
-	                'hunchRecs' : hunchData.recommendations
-	            }
-	            
-	            // render the template with templateData
-	            response.render("hunch_display.html",templateData)
-	        }
-    });*/
     
     
     
