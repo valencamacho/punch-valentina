@@ -16,7 +16,7 @@
 		 </div><!--closing header-->
 		 
 	 
-	<div id="leftcolumn">
+	<div id="fullcolumn">
 	
 		<h2>Total de findings:  <%= findings.length %> </h2>
   
@@ -26,13 +26,13 @@
        <div id="findings-list">
    		<% for(var i=0; i < findings.length; i++) { %> 
    		
-   		<%if (i%4 == 0){ %><ul class="row-<%i/4%>"> <%}%>
         <!-- recommendation row -->
         <li class="finding item" data-itemid="<%= findings[i].item_id %>" >
 
 			<%= findings[i].item_id %>
 
-          	<a href="<%= findings[i].url %>"><%= findings[i].item %>      	
+          	<a href="<%= findings[i].item %>">
+          	
 	          	<img src="<%= findings[i].image %>">
           	</a>
 
@@ -45,7 +45,6 @@
 			</form>
 
         </li><!-- end of recommendation row -->
-        <%if (i%4 == 3){ %></ul> <%}%>
 
     <% } %>
 	</div>

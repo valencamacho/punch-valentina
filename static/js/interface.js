@@ -124,7 +124,6 @@ function ordinal(num) {
 // SCRIPT JS // AJAX ADD TO FINDINGS
 
 
-/*
 jQuery(document).ready(function(){ 
 
 	jQuery('form').submit( function(e) {
@@ -158,7 +157,7 @@ jQuery(document).ready(function(){
 		return false;
 	});
 });
-*/
+
 
 // END OF SCRIPT JS // AJAX ADD TO FINDINGS
 

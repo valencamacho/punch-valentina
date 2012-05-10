@@ -219,9 +219,10 @@ height: 258px;
 
     #findings-list li img {
     	width:200px;
+    	margin-bottom: 10px;
     }
      #findings-list li p {
-    	max-height:100px;
+    	max-height:104px;
     }
     
     
