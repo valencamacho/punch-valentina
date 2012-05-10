@@ -196,7 +196,7 @@ function tryFindSketch () {
 var getSpiralValue = function() {
 	spiralNumDiv = document.getElementById('spiralNumberContainer');
 	
-	adjustedHunchRecNum = Processing.instances[0].mapTheNumbers(1.2,3.5);
+	adjustedHunchRecNum = Processing.instances[0].mapTheNumbers(1.14,1.8);
 	//Processing.instances[0].getHunchRange() ); 
 	spiralNumDiv.innerHTML = Processing.instances[0].getHunchRange() + "   adjusted: " + adjustedHunchRecNum;
 	/* console.log(" adjustedHunchRecNum = " + adjustedHunchRecNum + ", spiralNumDiv.innerHTML " + spiralNumDiv.innerHTML + " " ); */
