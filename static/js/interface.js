@@ -167,7 +167,7 @@ jQuery(document).ready(function(){
 window.onload = function () {
     tryFindSketch();
     
-    setInterval(getSpiralValue, 100);
+    setInterval(getSpiralValue, 10);
     setInterval(findClosestRec, 1000); //1 second delay on filtering recommendation rows
     
 }
